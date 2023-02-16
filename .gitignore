@@ -9,3 +9,16 @@
 
 # Python cache files
 *.pyc
+
+# server airflow pid
+*.pid
+
+# airflow config files
+*.cfg
+*.db
+
+# airflow conifg python file
+webserver-config.py
+
+#vs_code
+*.code-workspace
