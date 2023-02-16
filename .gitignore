@@ -1,0 +1,11 @@
+
+# text or json files 
+*.txt
+*.json
+
+
+# env credential files
+*.env
+
+# Python cache files
+*.pyc
