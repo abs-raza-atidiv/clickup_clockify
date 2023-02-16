@@ -1,8 +1,15 @@
 from utils.utils import *
 from utils.bigquery_utils import *
 import utils.db as db
+import logging
 
 def main():
+
+    # import subprocess
+ 
+    # # Using system() method to
+    # # execute shell commands
+    # subprocess.Popen('set GOOGLE_APPLICATION_CREDENTIALS=C:\Users\Syed\Downloads\productivity-377410-c3d21ce41a17.json', shell=True)
 
     '''
     # CREATE NEW CLIENTS ON CLOCKIFY FROM CLICKUP SPACES
@@ -184,7 +191,7 @@ def main():
     # print('\n\nCREATED ALL TASKS FOR ALL PROJECTS \n\n')
     # import ipdb; ipdb.set_trace()
 
-    print('\n\n HOLDING COMMNAD LINE \n\n')
+    logging('\n\n HOLDING COMMNAD LINE \n\n')
 
 
 
