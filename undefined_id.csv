@@ -1,0 +1,344 @@
+,id,name,projectId,assigneeIds,assigneeId,userGroupIds,estimate,status,duration,billable,hourlyRate,costRate,pull_date,clickup_task_id
+1,63ebf8aa57a0694b3d5875b1,6f4fu6-Estimate-5cy3qx-24*7 - logic change,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+25,63ebf743ee569c5821ad1b10,5cy3qx: 24*7 - logic change,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+34,63ebf67b57a0694b3d587224,chtkre: Bug Fix,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+36,63ebf5c6ee569c5821ad18b9,5cy3r0: Exposing the new question in the email scheduled reports,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+40,63ebf5be89cf166878cdc043,7hhn9f: TL RCA Report- Adhoc,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+41,63ebf5bd57a0694b3d5870d3,7q6z3e-Add in Consolidated audit report - When downloaded from Yelp QA tool-5cy3r0-Exposing the new question in the email scheduled reports,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+42,63ebf5bc57a0694b3d5870d1,7q6z5y-Consildated Add in Daily MTD Report - Scheduled in email-5cy3r0-Exposing the new question in the email scheduled reports,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+43,63ebf5bbfeb6c452615069da,ewann0: Yelp user ops- partners accept/reject summary report,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+44,63ebf5bb89cf166878cdc041,ewamqa: Not getting password for new users created,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+162,63ebf42eee569c5821ad1629,e58tg7-Finding recipients list & replacing them with Distributiion list-dm5qtr-Ensure availability of Consolidated Audit MTD Report & TAT Report,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+246,63ebf2a9ee569c5821ad137d,5cxhv8: Yelp QA Tool - Requirement Gathering,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+247,63ebf2a8feb6c45261506526,dm5qtr: Ensure availability of Consolidated Audit MTD Report & TAT Report,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+248,63ebf2a8ee569c5821ad137b,8zbagk: Splunk Pipeline stuck,63e4be43eae2264befc4e2d7,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:58,undefined
+1,63ebf646feb6c45261506a78,6f8zp9: Change FB Access Token,63e4becd8f76b0744ee91a5b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:59,undefined
+2,63ebf645ee569c5821ad1954,6fbtkq: Facebook Data Ingestion,63e4becd8f76b0744ee91a5b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:59,undefined
+3,63ebf5c289cf166878cdc050,5cxhqf: Expose metrics in Tableau Charts,63e4becd8f76b0744ee91a5b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:55:59,undefined
+12,63ebf7b457a0694b3d587422,5cy406-Generate Access code & Advertiser ID-5cy405-Tiktok Pipeline Setup,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+13,63ebf7b3feb6c45261506d32,6f572y-Upgrade tiktok Tap to V1.2-5cy405-Tiktok Pipeline Setup,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+14,63ebf7b3ee569c5821ad1c35,6f5758-Test TikTok V1.2 End points-5cy405-Tiktok Pipeline Setup,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+15,63ebf7b2ee569c5821ad1c31,6f57wx-POC on Bigquery target-5cy405-Tiktok Pipeline Setup,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+16,63ebf75989cf166878cdc2bc,6f4hy9-QA Tiktok Data-5cy405-Tiktok Pipeline Setup,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+18,63ebf67c89cf166878cdc1cd,5cy405: Tiktok Pipeline Setup,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+19,63ebf57cfeb6c4526150695d,5cxp1h: Create Airflow Machine,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+20,63ebf57bee569c5821ad181a,5cy8xr-Create GCP Instance-5cxp1h-Create Airflow Machine,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+21,63ebf57b57a0694b3d58705c,5cy8yx-Install Airflow in VM-5cxp1h-Create Airflow Machine,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+23,63ebf44589cf166878cdbe05,dtx15j: Tiktok Tap Fix,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+24,63ebf2aa89cf166878cdbad3,7qe3xk: Migrate pipeline to Airflow,63e4bedb29437653f72a1d40,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:00,undefined
+0,63ebf8b7feb6c45261506ee2,f1xz12: Datatype Validation in GSheets,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+1,63ebf89989cf166878cdc549,51mbnq: Dremio POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+2,63ebf89889cf166878cdc545,5czc7w: Ansible POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+3,63ebf892feb6c45261506e89,8za8yc-Deployment-8z993g-Tap ClickUp using Meltano SDK,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+4,63ebf89289cf166878cdc536,9578y9: Apache Beam,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+5,63ebf89189cf166878cdc534,957a77: Presto POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+29,63ebf749ee569c5821ad1b1e,f20wu2: Facebook API - Oauth,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+30,63ebf73dee569c5821ad1b0c,5czc6g: Teraform POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+33,63ebf685ee569c5821ad1a4d,6n42rf: Postman Collections Github Repo,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+34,63ebf68457a0694b3d587251,7hmtd1: Spark POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+37,63ebf656ee569c5821ad197e,51mbqb: Parquet POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+38,63ebf65589cf166878cdc12d,8z993g: Tap ClickUp using Meltano SDK,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+39,63ebf65457a0694b3d587193,dzmpr7: Atidiv target snowflake debugging,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+42,63ebf4ce89cf166878cdbea7,8za8y1-Tap Development-8z993g-Tap ClickUp using Meltano SDK,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+44,63ebf2d4ee569c5821ad13df,51mbp7: Private PiPy POC,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+45,63ebf24bfeb6c452615064c3,f20wbn: Shopify API - Oauth,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+47,63ebf23dfeb6c452615064b7,dm1u2b: Tap Clickup - Modifications,63e4bfa8eae2264befc4e503,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:03,undefined
+0,63ebf8b157a0694b3d5875cb,6f4gw5: COO Dashboard,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+1,63ebf8b057a0694b3d5875c5,6f4h21: OPS,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+2,63ebf8afee569c5821ad1e05,6f9yp4: Product Alicia Input,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+3,63ebf8ae89cf166878cdc587,7qe410: Add facility to Inventory Model,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+4,63ebf89f57a0694b3d5875a0,7qe4y5-Inconsistent product mapping-6f9yp4-Product Alicia Input,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+5,63ebf68bfeb6c45261506b69,7qdy6n: Numbers Mismatch : Alicia mail response,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+6,63ebf62157a0694b3d587163,6f90a6: Update FB Access Token,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+7,63ebf620ee569c5821ad1937,6fcbuy: Separate out FB roots pipeline,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+8,63ebf61f89cf166878cdc0e1,6fcbyk: Facebook ad_sets error RCA using Postman,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+9,63ebf61e57a0694b3d58715d,7qf886: Google Analytics Bug,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+10,63ebf61dee569c5821ad1931,7wxr3d: FB Access token via environment variable,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+11,63ebf61d57a0694b3d587149,8zdwva: GSheet Ingestion,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+12,63ebf594feb6c45261506982,6f4h6c-Klaviyo Segments POC-6f4h3j-Marketing QA,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+13,63ebf27657a0694b3d586a22,6f4h3j: Marketing QA,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+14,63ebf27657a0694b3d586a20,6n3yrq: Feedback from Martin on Marketing Dashboard,63e4bdf0eae2264befc4e243,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:05,undefined
+0,63ebf8bffeb6c45261506efe,dtqt68: Klaviyo <> Voyage Integration- Part 2,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+3,63ebf8baee569c5821ad1e2d,cx6q1j-Development-cx6q14-Snowflake to GSheet system for TikTok,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+7,63ebf8b257a0694b3d5875cd,cx6q1d-Research-cx6q14-Snowflake to GSheet system for TikTok,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+9,63ebf8a9feb6c45261506eac,6n43dj-Recharge Shopify Data Integration Issue-12j39g1-Future looking projections (Vneck Crew/ including churn/new subscription),63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+10,63ebf8a8ee569c5821ad1ddd,7hqnhh: Set up GSheet NPS Response Coding integration,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+13,63ebf8a689cf166878cdc566,cqnffz: Refactoring - Cleanup of old and un-used models,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+14,63ebf8a5feb6c45261506ea7,cx4nhe-reaching out to Sigma team to find out if we can get metadata of dashboards/worksheets/datasets-cqnffz-Refactoring - Cleanup of old and un-used models,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+19,63ebf8a157a0694b3d5875a2,86776qp84: Remove taxes from total net sales in all order tables,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+25,63ebf89889cf166878cdc543,6myjhj-Move RAW Snowflake Views to Github-12j39g1-Future looking projections (Vneck Crew/ including churn/new subscription),63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+28,63ebf7f8feb6c45261506dbc,6mxhpk-Creative KPIs- finalize the naming conventions- once Srikanth is back-12j39g1-Future looking projections (Vneck Crew/ including churn/new subscription),63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+29,63ebf7f7ee569c5821ad1ca8,7hqnp7-DBT modeling-7hqnhh-Set up GSheet NPS Response Coding integration,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+30,63ebf7f789cf166878cdc419,7hqnn7-Pipeline-7hqnhh-Set up GSheet NPS Response Coding integration,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+49,63ebf7e8ee569c5821ad1c94,85zrn251c-Create logic to map unmapped tracking numbers from different vendors-85zrk0mkx-Modeling - Shipping Costs from different vendors,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+50,63ebf7e7ee569c5821ad1c92,85zrn259t-Create DBT models for Shipping Costs-85zrk0mkx-Modeling - Shipping Costs from different vendors,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+51,63ebf7e757a0694b3d58747c,"85zrn254r-Add Order Created at in ""Shipping Costs"" view-85zrk0mkx-Modeling - Shipping Costs from different vendors",63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+59,63ebf7c589cf166878cdc3d7,7x52b9: Unified Marketing Model,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+73,63ebf7b0ee569c5821ad1c29,"e5ary7-Create pipeline for Collection and Collection Product-1d7x739-Build out core model for Site positioning, based on ""RAW"".""SHOPIFY"".""_SNAPSHOT_COLLECT""",63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+91,63ebf7a2ee569c5821ad1be4,"dtqzzx-Create a full time series-1d7x739-Build out core model for Site positioning, based on ""RAW"".""SHOPIFY"".""_SNAPSHOT_COLLECT""",63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+92,63ebf7a257a0694b3d5873c7,"f1z811-Add Collection title in dim_shopify_collect-1d7x739-Build out core model for Site positioning, based on ""RAW"".""SHOPIFY"".""_SNAPSHOT_COLLECT""",63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+146,63ebf74afeb6c45261506c32,85zrja993: FCT Shipping Cost Integration,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+159,63ebf69eee569c5821ad1a76,dtw17x-Create ad level google model-7x52b9-Unified Marketing Model,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+160,63ebf69dfeb6c45261506b7c,e59mwh-Create campaign level model-7x52b9-Unified Marketing Model,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+162,63ebf68aee569c5821ad1a5d,6f6dzv: Upgrade to TikTok V1.2,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+163,63ebf68989cf166878cdc1f4,7hqnjp: Need GA core model,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+164,63ebf68889cf166878cdc1f0,9573bb-Data ingestion from Google Adwords-7x52b9-Unified Marketing Model,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+167,63ebf68657a0694b3d58726b,dm9p8p: GA core model- addition of new metrics,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+169,63ebf66e89cf166878cdc199,5cuww5-Voyage Data Ingestion-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+170,63ebf66d57a0694b3d587206,6f906e: Update FB Access Token,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+171,63ebf66cee569c5821ad19fa,6f9r0h-Add Drew email to mailing list-12j39jj-Email notifications,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+172,63ebf66c57a0694b3d587202,6f9r1g-Upgrade Email Notifications to add reason feild-12j39jj-Email notifications,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+173,63ebf66b57a0694b3d587200,7qdzwj: Email Notifiations Bug fix,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+174,63ebf66aee569c5821ad19f2,bfj8fg: Klaviyo Pipeline in Rundeck,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+175,63ebf669ee569c5821ad19ec,dtx0rp: TikTok Tap Fix,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+176,63ebf668feb6c45261506af5,e59nc3-Data discrepancy check-dm9p8p-GA core model- addition of new metrics,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+200,63ebf5f9feb6c45261506a24,6f4dr7: Snowflake to GSheets Piepline Failure,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+201,63ebf5f889cf166878cdc08f,6f4dvy: Snowflake to GSheets better exception handling,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+202,63ebf5f757a0694b3d58710f,6mz9y9: Snowflake to GSheet system - different schedule for each query,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+203,63ebf5f657a0694b3d58710d,7x00hj: Bug in Snowflake to Google Sheet system,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+204,63ebf5f5feb6c45261506a22,chxr9x: TikTok spend discrepancy,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+205,63ebf5f4feb6c45261506a20,cx6q14: Snowflake to GSheet system for TikTok,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+216,63ebf5afee569c5821ad189a,51mpb1-Build models to support multiple attribution window-51mpaz-Facebook - Attribution Window,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+217,63ebf5aeee569c5821ad1898,5cuwxd-Modelling-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+218,63ebf5adfeb6c452615069c9,5cuwye-Reporting-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+219,63ebf5adee569c5821ad1895,6f4dgv-Klaviyo Statistics Analysis-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+220,63ebf5acee569c5821ad1892,6f7u4c: Modify DBT pipeline to fetch product title & variant title from Shopify,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+221,63ebf5abfeb6c452615069bd,6mvn0b-Modify Marketing dashboards-51mpaz-Facebook - Attribution Window,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+222,63ebf5abee569c5821ad188d,6f7u7z: Automated email report for difference Product mapping & Shopify,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+223,63ebf5aa89cf166878cdc02a,6myqxf-DBT Modeling-6f7u7z-Automated email report for difference Product mapping & Shopify,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+224,63ebf5a989cf166878cdc028,6myqy1-Create Report on Sigma-6f7u7z-Automated email report for difference Product mapping & Shopify,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+225,63ebf5a8feb6c452615069b9,7hqngt: Retool CX Ticket Category Assets,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+228,63ebf5a6feb6c452615069b2,chp7rz-Create CX Ticket Model-7hqngt-Retool CX Ticket Category Assets,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+229,63ebf5a5feb6c452615069ae,dm9r31-Add Lifetime Contribution metrics in Customer and subscriber modeling-12j39jr-Customer and subscriber modeling,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+230,63ebf5a589cf166878cdc022,dzpnfm-BI modifications-7hqngt-Retool CX Ticket Category Assets,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+232,63ebf5a3feb6c452615069a7,f1z42v-Fix CX and Bucket Group fields issue in CX_TICKETS _TAG-7hqngt-Retool CX Ticket Category Assets,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+240,63ebf585feb6c45261506963,6mymyz: Rework shipment date- Skubana,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+241,63ebf585ee569c5821ad1826,6n418h: Skubana Data Fix,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+242,63ebf58489cf166878cdbfd4,7qduu8-Voyage analysis with Andrew-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+264,63ebf528ee569c5821ad1737,86776c1f3: Bug-Facebook Pipeline,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+294,63ebf2df89cf166878cdbb46,bn6c2u-Create flag for business_day in dim_date using DBT Modeling-1drvu1x-Add 'Business Day' flag to DIM_DATE,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+295,63ebf2df57a0694b3d586aaa,b9v0ru-Create Pipeline to fetch data from Google Sheet-1drvu1x-Add 'Business Day' flag to DIM_DATE,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+308,63ebf2d5ee569c5821ad13e2,85zrgw2ky: BUG - Multiple pipelines shown running since 17th December on Rundeck,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+310,63ebf261feb6c452615064e7,51mpaz: Facebook - Attribution Window,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+311,63ebf26189cf166878cdba8f,51mpb0-Find whether data is available for multiple attribution window-51mpaz-Facebook - Attribution Window,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+312,63ebf260feb6c452615064e5,5cuwwm-Klaviyo Metric/Statistics Ingestion-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+313,63ebf25f57a0694b3d586a16,6f7uat: Exploration to reduce product mapping column,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+314,63ebf25eee569c5821ad132b,6mycxq-Voyage Data Verification-12j39ht-Klaviyo<>Voyage integration- high level,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+332,63ebf224feb6c45261506499,85zrk0mmt: Create pipeline to fetch shipping costs from DHL SFTP,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+333,63ebf22457a0694b3d5869d9,85zrk0mkx: Modeling - Shipping Costs from different vendors,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+334,63ebf223ee569c5821ad12e9,"85zrk0mq1: Add ""Last Updated On"" the Sigma Dashboards/reports",63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+335,63ebf22257a0694b3d5869d1,85zrn24uy-Send dump of all unmapped tracking id's-85zrk0mmt-Create pipeline to fetch shipping costs from DHL SFTP,63e4bd0c8f76b0744ee9172e,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:07,undefined
+104,63ebf535feb6c4526150689e,85zrju4j6: Reschedule dags,63e4bf4c29437653f72a1daf,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:09,undefined
+173,63ebf47eee569c5821ad167f,85zrhnxmy: google ads data discrepancy,63e4bf4c29437653f72a1daf,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:09,undefined
+203,63ebf208ee569c5821ad12d7,85zrk2ben: Mock up for Acquisition Dashboard,63e4bf4c29437653f72a1daf,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:09,undefined
+204,63ebf20889cf166878cdba43,85zrky1ak: Aspire - Data scraping,63e4bf4c29437653f72a1daf,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:09,undefined
+2,63ebf89e57a0694b3d58759b,85zrjzc7r-Create 4 klaviyo api keys-333dw7z-Klaviyo Pipeline,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+4,63ebf74689cf166878cdc2a4,85zrgpapf: Deposco Pipelines to retire,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+19,63ebf67089cf166878cdc1a1,85zrg8wuc-Transition Deposco Pipelines to AWS-320zjcq-Pipeline Failures,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+20,63ebf61c57a0694b3d587141,6f4fk7: POC for CrateJoy Data on GCP Block Storage,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+21,63ebf61b89cf166878cdc0c7,6f6j7z-Shopify_Orders-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+22,63ebf61aee569c5821ad1913,6fcc2n: Adding Retry mechanism to DAGs,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+23,63ebf61aee569c5821ad190f,6fcc71: R&D - Airflow Sensors,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+24,63ebf619ee569c5821ad190d,6mw168: FX database duplicate rows,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+25,63ebf61889cf166878cdc0b5,7q7ng6: Set Timezone to PDT in all the DAGs,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+26,63ebf617feb6c45261506a39,8ze0e3: Survicate Pipeline Failure,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+27,63ebf61689cf166878cdc0b3,b3xbdv-Development-6fcc71-R&D - Airflow Sensors,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+28,63ebf61657a0694b3d587131,b3xbe9-Deployment-6fcc71-R&D - Airflow Sensors,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+29,63ebf61589cf166878cdc0b1,b3xbey-Testing-6fcc71-R&D - Airflow Sensors,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+30,63ebf61457a0694b3d58712f,b40345: Creating a BaseDAG to prevent repeating code in DAGs,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+33,63ebf612ee569c5821ad1903,bnacfu: TikTok pipeline error,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+34,63ebf611ee569c5821ad1901,dm1zdy: Upgrade TikTok API,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+70,63ebf58f57a0694b3d587069,6f6j22-Amazon-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+71,63ebf58e89cf166878cdbfe1,6f6j61-Gorgias-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+74,63ebf58c57a0694b3d587064,dm87n4: Add Kenco USPS tracking staus to DELIVERY_INFO.USPS,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+128,63ebf55357a0694b3d58701d,6f4ev9: Change Airflow Server Timezone to PST,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+130,63ebf55157a0694b3d587015,6f9vue: Reschedule analytics_schedule_hourly stop between 10PM and 3AM,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+131,63ebf550feb6c45261506919,6f9vup: Delete Old files from dbt project,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+306,63ebf32489cf166878cdbc22,5cwun2-Upgrade dbt_utils-5cwum5-Upgrade DBT to 0.2.0,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+307,63ebf32357a0694b3d586b58,5cwun8-Upgrade dbt-5cwum5-Upgrade DBT to 0.2.0,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+308,63ebf32357a0694b3d586b56,5cwuna-Test-5cwum5-Upgrade DBT to 0.2.0,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+309,63ebf32257a0694b3d586b52,6f6j5h-FX-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+310,63ebf321ee569c5821ad1499,6f6j6q-Kable-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+311,63ebf320feb6c45261506626,6f6j7v-Pip Upgrader-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+312,63ebf32057a0694b3d586b50,6f6j83-Snapchat-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+313,63ebf31ffeb6c45261506624,6f6j8a-TikTok-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+314,63ebf31e57a0694b3d586b4e,6f6j8n-bigquery_to_snowflake_scheduled-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+315,63ebf31d89cf166878cdbc1e,6f6j8t-deliveries-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+316,63ebf31d57a0694b3d586b4c,6f6j8y-pepperjam-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+317,63ebf31c57a0694b3d586b4a,6f6j9e-survicate-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+318,63ebf31b89cf166878cdbc1c,6f6j9x-yotpo-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+319,63ebf31aee569c5821ad1497,6f6ja8-yotpo daily-12chnck-Airflow 2.0 Pipelines Migration,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+321,63ebf31989cf166878cdbc18,dm87ug: Deduplicate recharge_payments.order_lines/order_line_properties,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+370,63ebf27457a0694b3d586a1c,5cwum5: Upgrade DBT to 0.2.0,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+371,63ebf273feb6c452615064f8,6f9t69: Threshold for analytics_bundle_breakdown_nulls,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+373,63ebf272feb6c452615064f4,7qe11b: Migrate dbt model sources: PC_FIVETRAN_DB >> ATIDIV,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+376,63ebf26fee569c5821ad133c,b9md0e: Remove Duplicate Tickets in Gorgias Ticket Messages,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+378,63ebf26efeb6c452615064f2,bn5vw8: Narvar Data Pull,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+379,63ebf26d89cf166878cdba9e,chq1fh: Amazon pipelines are delayed - Amazon Order Line,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+397,63ebf23eee569c5821ad12fe,85zrgpafc: Create Ship Monk Pipeline,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+398,63ebf227feb6c4526150649f,85zrjzbjc-add webhook pipeline-85zrgpafc-Create Ship Monk Pipeline,63e4bdc9eae2264befc4e1ce,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:12,undefined
+0,63ebf7e589cf166878cdc40b,85zrhh8cz-Incremental Push-85zrhh8bn-Data Load,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+1,63ebf7e457a0694b3d587479,85zrhh8kq: Data Validation - Source <> Destination,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+2,63ebf7e3feb6c45261506d9b,85zrhhbht-GCP VM Instance-85zrhhbej-Airflow Setup,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+3,63ebf7e2feb6c45261506d99,85zrhhbke-Airflow Deployment-85zrhhbej-Airflow Setup,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+4,63ebf512feb6c45261506866,85zrjthbt: Add historical Aloha data in BigQuery,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+5,63ebf4cd89cf166878cdbea5,85zrk7g0k-Set up Filemage SFTP-85zrk7fzf-Aloha Integration,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+6,63ebf2d4ee569c5821ad13dc,85zrhh87y: Build OpenTable Tap,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+7,63ebf2d3ee569c5821ad13d6,85zrhh8b3: Target BQ Integration,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+8,63ebf2d289cf166878cdbb18,85zrhh8ck-Historical Push To BQ-85zrhh8bn-Data Load,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+9,63ebf2d157a0694b3d586a7a,85zrhhbej: Airflow Setup,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+10,63ebf201ee569c5821ad12d1,85zrjthmz: Data Analysis,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+11,63ebf20089cf166878cdba39,85zrk7fzf: Aloha Integration,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+12,63ebf1ffee569c5821ad12cf,85zrk7g1h-Get data from SFTP to Bigquery-85zrk7fzf-Aloha Integration,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+13,63ebf1f389cf166878cdba25,85zrhh8bn: Data Load,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+14,63ebf1f257a0694b3d5869a1,85zrhh8uf: E2E Deployment & Testing - Airflow + Git + BQ,63e4bf9eeae2264befc4e4fa,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:14,undefined
+2,63ebf818ee569c5821ad1cdd,94zz4x: Sales Dashboard / Product Dashboard - Implement 3 attach rate definitions,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+3,63ebf81757a0694b3d5874b8,bn3594: Product Dashboard - Add Yotpo Reviews by product,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+5,63ebf81657a0694b3d5874b6,chr3v3: Customer Profile dashboard feedback - Mail from Inbal & Hamish,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+42,63ebf7c5feb6c45261506d64,85zrjt1zp: URO Products spend for FB issue,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+49,63ebf756feb6c45261506c3e,85zrhvdfm: Tiktok at Campaign Level - Feasibility Check,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+57,63ebf6f3feb6c45261506bd8,bn3264: Finance Dashboard- New Account to be included in calculation,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+58,63ebf6f257a0694b3d5872ca,bn35c1: Find global CPA across dashboards,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+59,63ebf6f1ee569c5821ad1ac5,bna5x9: CX Tag charts populating null - Slack from Hamish,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+60,63ebf6f0feb6c45261506bd6,cqkpbd: Hamish Slack Query - Date Filters in Marketing Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+61,63ebf6effeb6c45261506bd4,f21ank: Finance Dashboard - Discrepancy in P&L,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+70,63ebf6e7ee569c5821ad1abf,6f8eb9-FRT is getting populated as null-1ugbguy-CX Dashboard - Inbals Feedback,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+71,63ebf6e6feb6c45261506bc4,94zxxd-Return amount in Shopify and Dashboard not matching-8zee7g-Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+72,63ebf6e689cf166878cdc24e,94zxxt-Returns as % of Gross Rev Minus Discount in shopify and Dashboard do not match-8zee7g-Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+73,63ebf6e5feb6c45261506bbe,94zy2w-Cost per New Order - New Requirement-8zee7g-Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+74,63ebf6e4feb6c45261506bbc,94zy40-Marketing Dashboard -One time order definition check-8zee7g-Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+75,63ebf6e3feb6c45261506bb8,94zybm: Cohort Dashboard - Require Understanding on LTV of Active subscriber for Cohort Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+76,63ebf6e3ee569c5821ad1abb,94zy6k: Retention Dashboard - LTV of Active Subscribers is too high,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+77,63ebf6e2feb6c45261506bb6,94zyf9: Ecommerce Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+78,63ebf6e157a0694b3d5872b4,94zyg1-Emails Collected twice than the number reported in Klaviyo-94zyf9-Ecommerce Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+79,63ebf6e0ee569c5821ad1ab9,94zyq9-Email capture rate is higher than the number reported in Klaviyo-94zyf9-Ecommerce Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+80,63ebf6e057a0694b3d5872b2,94zywg: Product Marketing Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+81,63ebf6df57a0694b3d5872b0,b3zbmf-Reverse the formula for variance calculation -Marketing Table-8zdzt4-Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+82,63ebf6defeb6c45261506bb4,b3zmpa-New Order Revenue - Is this revenue of New orders. Provide notes on this in footnotes.-8zee7g-Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+83,63ebf6ddee569c5821ad1ab7,"b3zmqr-Paid Search - does this include Google Shopping? If not, It should include Google Shopping in Paid Search and CPA on Paid Search-8zee7g-Marketing Dashboard - Points from Martin",63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+84,63ebf6dd57a0694b3d5872ae,b3zmq1-Subscriptions Added & Subscription Renewals - Provide calculation methodology in footnotes.-8zee7g-Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+85,63ebf6dc57a0694b3d5872ac,b4131w: Pivot Finance Chart,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+86,63ebf6db89cf166878cdc24a,bfkfwc: CX Dashboard - CX Tagging Changes done,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+87,63ebf6dafeb6c45261506bb2,bfkq1f: Subscription renewals logic updated,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+88,63ebf6daee569c5821ad1ab3,bn354e: LTV Dashboard improvements,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+89,63ebf6d9ee569c5821ad1ab1,bn6zxh-Create model-bfkfwc-CX Dashboard - CX Tagging Changes done,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+90,63ebf6d857a0694b3d5872aa,bnacuc-Frontend recreation of tag analysis charts-bfkfwc-CX Dashboard - CX Tagging Changes done,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+91,63ebf6d7ee569c5821ad1aaf,chr1rx-QA Recreated charts-bfkfwc-CX Dashboard - CX Tagging Changes done,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+92,63ebf6d6feb6c45261506bb0,chtg5x: CX Dashboard - Agent utilisation number is higher,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+93,63ebf6d6ee569c5821ad1aad,cx86du: Marketing Dashboard Alignment issue,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+94,63ebf6d5feb6c45261506bae,dm19u9-Mail from Martin-94zyrp-E-Commerce Dashboard - % of Non-Bounced Sessions with PPV is higher than 100%,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+95,63ebf6d489cf166878cdc248,dm1x07: CX tags clarification to Hamish,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+96,63ebf6d3feb6c45261506bac,dtt9h1: CX Dashboard - Automated Report for Inbal,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+97,63ebf6d2feb6c45261506baa,dzkn15: Fix the error causing Marketing Model to fail,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+158,63ebf6a1feb6c45261506b80,85zrjt1nu-Unmapped_atc issue-2h271pf-Amol's Questions,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+159,63ebf6a157a0694b3d58728a,85zrhmfjg: tiktok garbage rows exclusion and QA,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+160,63ebf6a0ee569c5821ad1a78,85zrjt4bf-Review of Basket and cross-sell analysis-2h271pf-Amol's Questions,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+161,63ebf69ffeb6c45261506b7e,85zrkb77j-Question on data in acquisition models compared to the base tables-2h271pf-Amol's Questions,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+162,63ebf694feb6c45261506b76,8zea6e-Include new components into calculation of Purchase of fixed Assets-8zdzt4-Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+163,63ebf693ee569c5821ad1a6f,8zeafx-Include new accounts in the calculation of working capital-8zdzt4-Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+164,63ebf692feb6c45261506b74,8zeaxk-Reverse the formula for % Relative in PnL Forecast table-8zdzt4-Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+165,63ebf69257a0694b3d587281,94zyvt: Ecommerce Dashboard - Require documentation on approach used for Upsell events,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+166,63ebf691ee569c5821ad1a6d,bn6k1d-Arrange for missing Historical data-b3ztn1-CX Dashboard - CX Agent Schedule not updating,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+167,63ebf69089cf166878cdc200,chxk3t-Collate list of google sheets to collated into one-b4132w-Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+168,63ebf68fee569c5821ad1a6b,cx8zg9-RCA to find and Map the new account from QB - Amex 1003-bn3264-Finance Dashboard- New Account to be included in calculation,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+173,63ebf68b57a0694b3d58727f,85zrhvdgx: Documentation on changes in Pipeline,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+176,63ebf67757a0694b3d58721e,85zrhpm91: klaviyo data ingestion due to pipeline failures,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+177,63ebf64589cf166878cdc0f7,9518c0: GSheet Metadata pipeline failure,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+178,63ebf644feb6c45261506a73,9581ha: Update Facebook business SDK,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+179,63ebf643ee569c5821ad1952,b9nwtr: Google Analytics - Historical ingestion for shoppingStage,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+180,63ebf642feb6c45261506a71,bfkjyn: Google Analytics - Historical ingestion for all shoppingStage tables,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+181,63ebf64257a0694b3d58717b,bfjbqg: Adwords pipeline failure,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+182,63ebf64157a0694b3d587179,bn6jwr-Build pipeline to ingest data of Agent Roster-b3ztn1-CX Dashboard - CX Agent Schedule not updating,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+183,63ebf640ee569c5821ad1950,bn6k0r-Ingest Historical Data-b3ztn1-CX Dashboard - CX Agent Schedule not updating,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+184,63ebf63f89cf166878cdc0f5,bn6k2v-Ingest missing historical data-b3ztn1-CX Dashboard - CX Agent Schedule not updating,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+185,63ebf63e57a0694b3d587177,bn6zw9-Creating pipeline for daily Ingestion-bfkfwc-CX Dashboard - CX Tagging Changes done,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+186,63ebf63dee569c5821ad194e,cqgq17-Create Framework to ingest one google sheet with multiple tabs-b4132w-Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+187,63ebf63dee569c5821ad194c,dtx5h5: Process stage pipeline failing,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+188,63ebf63c57a0694b3d587175,f21dyv: Data type validation of G Sheets,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+224,63ebf5f3ee569c5821ad18e3,94zz2f: Change Order status chart in Ops Inventory and Logistic,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+225,63ebf5f2feb6c45261506a1e,94zz39-Create two separate date filters for fulfilment and remaining charts of Ops & Inventory-dzk41n-Logistics and Inventory - Chart Updates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+226,63ebf5f1ee569c5821ad18e1,94zz40-Change the X axis to dates for order weight chart-dzk41n-Logistics and Inventory - Chart Updates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+227,63ebf5f189cf166878cdc08a,94zz3q-Match the color of Map and Average for Days to the home chart in Ops inventory-dzk41n-Logistics and Inventory - Chart Updates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+228,63ebf5f0feb6c45261506a1c,b3zaxu: Mail from Inbal on Sales QA,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+229,63ebf5efee569c5821ad18df,b3zby4-Difference in Actual gross revenue in Finance and Marketing dashboard.-8zdzt4-Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+230,63ebf5ee89cf166878cdc080,b3zc13-Projected gross revenue and spend is not correct-8zdzt4-Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+231,63ebf5edee569c5821ad18db,b4132w: Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+232,63ebf5ecfeb6c45261506a0c,bn34y2: A-FLO-003 product implementation,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+233,63ebf5ebee569c5821ad18d7,bna4c3-Logistics & Inventory dashboard - Add Warehouse Filter & Update Pull Category-dzk41n-Logistics and Inventory - Chart Updates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+234,63ebf5ebee569c5821ad18d5,cx88rv: Logistics & Inventory - Data needed from data warehouse on Inventory.,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+235,63ebf5eafeb6c45261506a0a,dm1bxj: Logistics and Inventory - Email From Inbal,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+236,63ebf5e957a0694b3d5870fd,dtvtcj: Product Taxonomy - Update newly launched products,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+237,63ebf5e8feb6c45261506a08,dzjue8-Config Panel - Indirect COGS-b4132w-Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+238,63ebf5e8ee569c5821ad18d3,dzk120-Config Panel - De-bundling-b4132w-Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+239,63ebf5e757a0694b3d5870fb,dzn79p: Ops Logistics & Inventory chart - Addition Pull Slab,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+240,63ebf5e689cf166878cdc074,ew2v3y: Update Holiday Shipping Rates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+280,63ebf59dfeb6c4526150699b,bfkfg9-Inbal Query on Slack - Logistics & Inventory-dzk41n-Logistics and Inventory - Chart Updates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+292,63ebf52789cf166878cdbf03,b41311: Bobby's Dashboard,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+293,63ebf52657a0694b3d586f80,dzk41n: Logistics and Inventory - Chart Updates,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+319,63ebf3effeb6c452615066e5,8zee7g: Marketing Dashboard - Points from Martin,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+320,63ebf3ef57a0694b3d586dc5,dm1rbt-FRT numbers check-1ugbguy-CX Dashboard - Inbals Feedback,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+321,63ebf3ee89cf166878cdbcf0,dm3q23: Finance Dashboard - Ingestion of 2019 Data,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+322,63ebf3edee569c5821ad1562,dznb7r: CX Dashboard - List of Auto Close Tickets in Gorgias,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+420,63ebf3a489cf166878cdbc9a,85zrgt8gh: Implement Amazon product hierarchy,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+421,63ebf3a389cf166878cdbc98,85zrn17ku-Null as Product group in Net revenue by product chart CEO dash-2h271pf-Amol's Questions,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+422,63ebf2a5feb6c45261506524,6fc0a6-RT Numbers are high and need to re-validated-1ugbguy-CX Dashboard - Inbals Feedback,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+423,63ebf2a589cf166878cdbacf,6f4gzp-CX QA-1ugbguy-CX Dashboard - Inbals Feedback,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+424,63ebf2a4feb6c45261506522,8zdzt4: Finance Dashboard - Points from Alicia,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+425,63ebf2a3feb6c45261506520,94zyrp: E-Commerce Dashboard - % of Non-Bounced Sessions with PPV is higher than 100%,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+426,63ebf2a3ee569c5821ad1371,94zy4r: CPA on Paid Search is not consistent - Bing Search is Incorrect,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+427,63ebf2a257a0694b3d586a49,b3ztn1: CX Dashboard - CX Agent Schedule not updating,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+428,63ebf2a189cf166878cdbacc,b9r37y: CX Dashboard Excel Export Failing from Sigma,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+429,63ebf2a0feb6c4526150651e,bfje57: Finance Dashboard - Cash Flow: Data for Investing activities is not available in Raw - Quick Books,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+430,63ebf29f89cf166878cdbaca,bfmegb-Config Panel - Direct COGS-b4132w-Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+431,63ebf29f57a0694b3d586a47,cx8zm0-Modeling changes to pull in the new account-bn3264-Finance Dashboard- New Account to be included in calculation,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+432,63ebf29e89cf166878cdbac8,dm37zc: Finance Dashboard - Adding new accounts : Payroll Liabilities and Outbound Shipping,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+433,63ebf29d57a0694b3d586a45,dtydmu: List of Dashboards - Require store level break,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+434,63ebf29cfeb6c4526150651c,ew2jvg: Finance Dashboard - Add Account name - Reimbursements (Bobby) (deleted) in Balance Sheet,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+435,63ebf29cee569c5821ad136f,ew2vcr-Product Taxonomy-b4132w-Config Panel,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+484,63ebf27889cf166878cdbaa6,85zrgmya9: Add description for FB pipelines,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+485,63ebf27789cf166878cdbaa4,85zrhb58c: Fix Rundeck error,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,PT2H,True,,,2023-02-22 16:56:18,undefined
+488,63ebf24657a0694b3d5869f8,85zrhb3z4: New Acquisition Charts,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+489,63ebf245feb6c452615064c1,85zrk79cj: GA Data Check,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+490,63ebf244ee569c5821ad1304,85zrn4y77: New Shipping Rates 2023,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+499,63ebf22889cf166878cdba59,85zrkhj58: List of Dashboard in Old Frame - Google Sheet,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+500,63ebf217feb6c45261506483,85zrn4xkj: Pinterset - New Ad account,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+501,63ebf206feb6c45261506474,94zz21: NPS Dashboard - New chart Request,63e4bdfc29437653f72a1bd0,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:18,undefined
+6,63ebf88357a0694b3d587563,85zrh3n5k: DB - AB InBev,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+7,63ebf88289cf166878cdc51c,85zrh3n5m: DB - Ambrosia,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+8,63ebf88157a0694b3d587561,85zrh3n5n: DB - Barrelsmith,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+9,63ebf880ee569c5821ad1d96,85zrh3n5p: DB - Bevridge,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+10,63ebf880ee569c5821ad1d94,85zrh3n5q: DB - Bootlegger,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+11,63ebf87f89cf166878cdc514,85zrh3n5r: DB - Breckenridge,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+12,63ebf87efeb6c45261506e73,85zrh3n5t: DB - Brother's Bond,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+13,63ebf87dfeb6c45261506e71,85zrh3n5w: DB - Cantu Group,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+14,63ebf87dee569c5821ad1d92,85zrh3n5u: DB - Calirosa,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+15,63ebf87c89cf166878cdc511,85zrh3n5x: DB - Casa Don Ramon,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+16,63ebf87b89cf166878cdc50f,85zrh3n5y: DB - Casa Dragones,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+17,63ebf87aee569c5821ad1d90,85zrh3n5z: DB - CleanCo,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+18,63ebf87a89cf166878cdc50d,85zrh3n60: DB - Coconut Cartel,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+19,63ebf87957a0694b3d587555,85zrh3n61: DB - Codigo 1530,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+20,63ebf87889cf166878cdc506,85zrh3n62: DB - Condesa Gin,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+21,63ebf87757a0694b3d587553,85zrh3n63: DB - Conecuh Brands,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+22,63ebf87657a0694b3d587551,85zrh3n64: DB - Corby Spirit & Wine,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+31,63ebf7ccee569c5821ad1c63,85zrgt70h: DB - House of Carbonadi,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+33,63ebf7cb89cf166878cdc3df,85zrgt70j: DB - Tequila Corrido,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+34,63ebf7ca57a0694b3d58744b,85zrh3n5f: DB - Whyte & Mackay,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+40,63ebf72aee569c5821ad1af8,85zrhhz10: Diageo Jan-Dec'22 QBR,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+43,63ebf25389cf166878cdba8b,85zrh3n5h: DB - 80 Proof Imports,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+44,63ebf25389cf166878cdba89,85zrh3n5j: DB - 818 Tequila,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+45,63ebf252feb6c452615064d1,85zrjgqzt: Bacardi OND 2022 QBR,63e4bf8f29437653f72a1e3b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:21,undefined
+0,63ebf8acfeb6c45261506eb5,8zbadb: NPS Launch Oct 2021,63e4beb229437653f72a1d38,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:22,undefined
+2,63ebf5c257a0694b3d5870e5,8zbaag: NPS Launch Aug 2021,63e4beb229437653f72a1d38,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:22,undefined
+3,63ebf5c1ee569c5821ad18b7,8zbacw: NPS Launch Sep 2021,63e4beb229437653f72a1d38,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:22,undefined
+14,63ebf760ee569c5821ad1b32,85zrjmgv9: Mail Automation for SF vs Ascend audit sheet scheduled delivery,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+15,63ebf75f89cf166878cdc2c2,85zrk89az: Google Conversion Events - Uploaded vs Data Reflecting on Google Ads - Automated Audit Sheet & Email,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+34,63ebf71389cf166878cdc280,85zrgwu3p: PowerBI edit issue for VVDP team,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+49,63ebf542ee569c5821ad179d,85zrgfdrt: VVDP Salesforce Ingestion,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+50,63ebf54257a0694b3d586fe8,85zrh6m40-Ascend Sync Pipeline Build & Historical Ingestion-85zrgqfmg-Ascend Stream API Implementation,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+51,63ebf541ee569c5821ad1799,85zrjnm9c-Create Email Script-85zrjmgv9-Mail Automation for SF vs Ascend audit sheet scheduled delivery,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+87,63ebf4b257a0694b3d586f0b,85zrh6k57: BUG - Ascend and Callrail schema tables swap,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+100,63ebf2c8ee569c5821ad13aa,85zrgqfmg: Ascend Stream API Implementation,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+101,63ebf2c7feb6c45261506549,85zrjue6p: GTM and Calendly SetUp,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+108,63ebf24989cf166878cdba79,85zrgt8he: Salesforce and Ascend Data Reconcilation,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+116,63ebf21cfeb6c4526150648b,85zrjuedu-pub/sub for calendly missing events-85zrjue6p-GTM and Calendly SetUp,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined
+117,63ebf21cfeb6c45261506489,85zrjuef2-Google Tag Manager-85zrjue6p-GTM and Calendly SetUp,63e4bf629b71e0011516ef1b,[],,[],PT0S,ACTIVE,,True,,,2023-02-22 16:56:25,undefined

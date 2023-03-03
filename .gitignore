@@ -1,0 +1,21 @@
+
+# text or json files 
+*.txt
+*.json
+
+
+# env credential files
+*.env
+
+# Python cache files
+*.pyc
+
+# server airflow pid
+*.pid
+
+# airflow config files
+*.cfg
+*.db
+
+# airflow conifg python file
+webserver-config.py
