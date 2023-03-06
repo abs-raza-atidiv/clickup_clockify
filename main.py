@@ -64,10 +64,12 @@ def main():
 
     # new_projects_to_write_to_db = pd.DataFrame()
     rejected_clickup_list = get_clickup_rejected_spaces()
+    all_lists = []
 
     for idx, spc in all_spaces.iterrows():
         # import ipdb; ipdb.set_trace()
         clickup_list = get_clickup_lists(spc['id']) if spc['id'] not in rejected_clickup_list else []
+        # all_lists.extend(clickup_list) # onetime load
 
         for elm in clickup_list:
             try:
@@ -77,6 +79,8 @@ def main():
                     list_space_id = space_client_mapping[spc['id']]
 
                     resp = create_clockify_projects(list_name, project_note = list_id, client_id= list_space_id )
+                    if resp == 201:
+                        all_lists.append(elm) ## to be used on incremental load
                     # resp['clickup_space_id'] = list_space_id
                     # resp['clickup_list_id'] = list_id
                     # resp['pull_date'] = pull_date
@@ -92,6 +96,11 @@ def main():
         if len(clickup_list) == 0:
             print('NO LIST FETCHED FOR PROJECT {}-{}'.format(spc['id'], spc['name']))
     
+    # import ipdb; ipdb.set_trace()
+    
+    ## Prepare Clickup List Dump
+    dump_new_clickup_list_to_bq(all_lists)
+
     # df2gcp(new_projects_to_write_to_db, db.CLOCKIFY_PROJECT, mode='append')
     
     # import ipdb; ipdb.set_trace()

@@ -19,3 +19,6 @@
 
 # airflow conifg python file
 webserver-config.py
+
+# zip files
+*.zip

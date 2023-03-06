@@ -1,5 +1,6 @@
 
 CLICKUP_TASK = 'clickup_task'
+CLICKUP_LIST = 'clickup_list'
 
 CLOCKIFY_CLIENT = 'clockify_client'
 CLOCKIFY_TASK = 'clockify_task'

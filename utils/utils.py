@@ -5,7 +5,7 @@ import pandas as pd
 import json 
 import utils.bigquery_utils as bq
 import utils.db as db
-from  datetime import datetime
+from  datetime import datetime, date
 from envyaml import EnvYAML
 CONFIG = EnvYAML('config.yaml').get('prod')
 
@@ -127,9 +127,10 @@ def create_clockify_projects(project_name, project_note, client_id):
 
         if response.status_code == 201:
             print('project created - ', project_name)
-            resp = response.json()
-            return resp
+            # resp = response.json()
+            return response.status_code
         else:
+            return 501
             print('failed api. Err: ', response.text)
 
     except Exception as e:
@@ -231,6 +232,8 @@ def standardize_column(df):
     new_columns = [elm.replace('.','_') for elm in columns]
 
     df.columns = new_columns
+
+    return df
     
 
 def get_clockify_clients_bq():
@@ -432,4 +435,24 @@ def get_clickup_rejected_spaces():
         return rejected_list_str        
         
     except Exception as e:
+        print(str(e))
+
+
+def dump_new_clickup_list_to_bq(all_lists):
+    try:
+        if len(all_lists)>0:
+            all_lists_df = pd.json_normalize(all_lists)
+
+            if len(all_lists_df.columns)>0:
+
+                new_df = standardize_column(all_lists_df)
+
+                new_df['pull_date'] = current_date_time()
+
+                bq.df2gcp(new_df, db.CLICKUP_LIST, mode='append')
+            else:
+                log_error('NO COLUMNS FOUND IN NEW LIST', 'log__'+str(date.today()))
+
+    except Exception as e:
+        log_error(str(e), 'log__'+str(date.today()))
         print(str(e))
