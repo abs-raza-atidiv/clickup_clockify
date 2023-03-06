@@ -5,8 +5,9 @@ import pandas as pd
 import json 
 import utils.bigquery_utils as bq
 import utils.db as db
-
 from  datetime import datetime
+from envyaml import EnvYAML
+CONFIG = EnvYAML('config.yaml').get('prod')
 
 # GET CLICKUP SPACES
 # ---------------------------------------------------------------
@@ -419,3 +420,16 @@ def get_all_clockify_tasks():
             print(str(e))
 
     return master_df
+
+
+## --------------------------------------------------------------------------------------------------
+## GET LIST SPACES THAT NEEDS NOT TO BE MOVED TO CLOCKIFY
+## --------------------------------------------------------------------------------------------------
+def get_clickup_rejected_spaces():
+    try:
+        rejected_list = CONFIG.get('rejected_clickup_space_ids')
+        rejected_list_str = [str(x) for x in rejected_list]
+        return rejected_list_str        
+        
+    except Exception as e:
+        print(str(e))

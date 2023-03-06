@@ -6,6 +6,8 @@ from asana_sync import asana_data_pull
 pull_date = current_date_time()
 
 def main():
+
+    # import ipdb; ipdb.set_trace()
     
     pull_date = current_date_time() 
 
@@ -60,11 +62,12 @@ def main():
     clockify_projects = get_clockify_projects()
     list_ids_in_projects = [x['note'] for x in clockify_projects]
 
-    # import ipdb; ipdb.set_trace()
     # new_projects_to_write_to_db = pd.DataFrame()
+    rejected_clickup_list = get_clickup_rejected_spaces()
 
     for idx, spc in all_spaces.iterrows():
-        clickup_list = get_clickup_lists(spc['id'])
+        # import ipdb; ipdb.set_trace()
+        clickup_list = get_clickup_lists(spc['id']) if spc['id'] not in rejected_clickup_list else []
 
         for elm in clickup_list:
             try:
@@ -87,7 +90,7 @@ def main():
                 print(str(e))
         
         if len(clickup_list) == 0:
-            print('NO LIST FOUND FOR THIS PROJECT')
+            print('NO LIST FETCHED FOR PROJECT {}-{}'.format(spc['id'], spc['name']))
     
     # df2gcp(new_projects_to_write_to_db, db.CLOCKIFY_PROJECT, mode='append')
     
