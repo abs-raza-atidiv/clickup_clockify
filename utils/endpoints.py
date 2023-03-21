@@ -18,7 +18,7 @@ clickup_folderless_list = clickup_base_url+"/space/{space_id}/list"
 
 clickup_header = {"Authorization": env.clickup_token, "Content-Type": "application/json"}
 
-clickup_task = clickup_base_url+"/list/{list_id}/task?page={page_no}&subtasks=true&include_closed=true"
+clickup_task = clickup_base_url+"/list/{list_id}/task?page={page_no}&subtasks=true&include_closed=true&date_created_gt={date_created_gt}"
 
 #---------------------------------------------------------------------------------------
 #  CLOCKIFY

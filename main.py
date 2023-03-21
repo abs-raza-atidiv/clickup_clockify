@@ -5,11 +5,8 @@ from asana_sync import asana_data_pull
 
 pull_date = current_date_time()
 
-def main():
 
-    # import ipdb; ipdb.set_trace()
-    
-    pull_date = current_date_time() 
+def clickup_spaces():
 
     # CREATE NEW CLIENTS ON CLOCKIFY FROM CLICKUP SPACES
     # --------------------------------------------------- 
@@ -48,15 +45,21 @@ def main():
             print(str(err))
     
     ## Insert data in database
+    if len(spaces) > 0:
+        dump_new_clickup_space_to_bq(spaces)
+        # df2gcp(spaces, db.CLICKUP_SPACE, mode='replace')
+
     if len(new_client_to_write_to_db) > 0:
         df2gcp(new_client_to_write_to_db, db.CLOCKIFY_CLIENT, mode='append')
 
-    
+    return all_spaces
+
+
+def clickup_list(all_spaces):
     # # Create PROJECTS on clockify for LISTS which do not exist on clockify
     # #------------------------------------------------------------------------ 
-    # import ipdb; ipdb.set_trace()
-
-    clockify_clients = get_clockify_clients()
+    # all_spaces = gcp2df("select clickup_space_id as id, name from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLOCKIFY_CLIENT))
+    # clockify_clients = get_clockify_clients() ## Redundant function, output not being used anywhere
     space_client_mapping = get_space_client_mapping()
 
     clockify_projects = get_clockify_projects()
@@ -65,9 +68,8 @@ def main():
     # new_projects_to_write_to_db = pd.DataFrame()
     rejected_clickup_list = get_clickup_rejected_spaces()
     all_lists = []
-
+    success_response_list = []
     for idx, spc in all_spaces.iterrows():
-        # import ipdb; ipdb.set_trace()
         clickup_list = get_clickup_lists(spc['id']) if spc['id'] not in rejected_clickup_list else []
         # all_lists.extend(clickup_list) # onetime load
 
@@ -78,9 +80,11 @@ def main():
                     list_id = elm.get('id')
                     list_space_id = space_client_mapping[spc['id']]
 
-                    resp = create_clockify_projects(list_name, project_note = list_id, client_id= list_space_id )
+                    resp, json_response = create_clockify_projects(list_name, project_note = list_id, client_id= list_space_id )
                     if resp == 201:
                         all_lists.append(elm) ## to be used on incremental load
+                        success_response_list.append(json_response)
+                        clockify_projects.append(json_response)
                     # resp['clickup_space_id'] = list_space_id
                     # resp['clickup_list_id'] = list_id
                     # resp['pull_date'] = pull_date
@@ -96,26 +100,25 @@ def main():
         if len(clickup_list) == 0:
             print('NO LIST FETCHED FOR PROJECT {}-{}'.format(spc['id'], spc['name']))
     
-    # import ipdb; ipdb.set_trace()
-    
     ## Prepare Clickup List Dump
     dump_new_clickup_list_to_bq(all_lists)
 
-    # df2gcp(new_projects_to_write_to_db, db.CLOCKIFY_PROJECT, mode='append')
-    
-    # import ipdb; ipdb.set_trace()
+    dump_new_clockify_project_to_bq(success_response_list)
+
+    return clockify_projects
+
+
+def clickup_tasks(_all_clockify_projects):
 
     ''' GETTING ALL CLIKCUP TASKS IN DATAFRAME and UPLOAD TO BIGQUERY '''
+    # ----------------------------------------------------------------------------------- '''
     clickup_task_df = fetch_all_clickup_tasks()
 
     clickup_task_df = clickup_task_df[ clickup_task_df.id != '12ck3ph']
 
-    # import ipdb; ipdb.set_trace()
-
     clickup_task_df.drop(axis = 1, columns = ['custom_fields'], inplace = True)
     
-    df2gcp(clickup_task_df, db.CLICKUP_TASK, mode = 'replace')
-
+    df2gcp(clickup_task_df, db.CLICKUP_TASK, mode = 'append')
 
 
     ''' CREATE TASKS ON CLOCKIFY FROM BIGQUERY '''
@@ -125,12 +128,13 @@ def main():
     # ## ------------------------------------------------------------------------------
 
     clickup_df = gcp2df("select id , name, list_id , list_name \
-         from `productivity-377410.tickets_dataset.clickup_task`")
+         from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
     # clickup_df = clickup_task_df ## both are same are we need the latest data from clickup
 
     # # ## ------------------------------------------------------------------------------
 
-    clockify_projects = get_clockify_projects()
+    # clockify_projects = get_clockify_projects()
+    clockify_projects = _all_clockify_projects
     clockify_projects_lst = [
         {"clickup_id": x['note'], "clockify_project_id": x['id'], "clockify_project_name": x['name']} for x in clockify_projects
     ]
@@ -148,22 +152,18 @@ def main():
         # this is a double check being set to make sure we dont create a task twice on clockify  
         clockify_bq_task_list = []
         clockify_bq_task = gcp2df("select distinct clickup_task_id \
-            from `productivity-377410.tickets_dataset.clockify_task`").values.tolist()
+            from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLOCKIFY_TASK)).values.tolist()
         clockify_bq_task_list = [x[0] for x in clockify_bq_task]
     except Exception as e: print(str(e))
 
     # # ## ------------------------------------------------------------------------------
-
-    # import ipdb; ipdb.set_trace()
 
     # Remove ids of tasks which have been created 
     clickup_trimmed_df = clickup_df[~clickup_df['id'].isin(clockify_bq_task_list)].reset_index()
 
     print('{} tasks to be created '.format(len(clickup_trimmed_df)))
     
-    # import ipdb; ipdb.set_trace()
     new_task_created = []
-    pull_date = current_date_time()
 
     for idx, elm in clickup_trimmed_df.iterrows():
         try:
@@ -186,21 +186,21 @@ def main():
         except Exception as e: print(str(e)+ ' ' + elm['list_name'])
 
 
-    # import ipdb; ipdb.set_trace()
     df_to_write = pd.DataFrame(new_task_created)
+    df_to_write['pull_date'] = pull_date
     print('{} records to write to clockify_task and {} new tasks were found in clickup '.format(len(df_to_write), len(clickup_trimmed_df) ))
     
     # update succesfull task to BQ
     bq.df2gcp(df_to_write, db.CLOCKIFY_TASK, mode='append')
 
-    # write_json_log(resp, 'df_csv.json')
-
-
-    # print('\n\nCREATED AL L TASKS FOR ALL PROJECTS \n\n')
-    # import ipdb; ipdb.set_trace()
-
-    # print('\n\n HOLDING COMMNAD LINE \n\n')
-
+def main():
+    print(datetime.now())
+    
+    clients = clickup_spaces()
+  
+    projects = clickup_list(clients)
+    
+    clickup_tasks(projects)
 
     ''' UPDATE CHILD TASKS '''
     
@@ -236,7 +236,6 @@ def main():
     # df = pd.DataFrame(data)
     # # clockify_task_ids = df['id'].values.tolist()
 
-    # import ipdb; ipdb.set_trace()
 
     # for idx, elm in child_df.iterrows():
     #     # print(elm['id'])
@@ -264,7 +263,6 @@ def main():
     #         create_clockify_task(clk_project_id, elm['clickup_task_id']+': '+elm['clikcup_task_name'], elm['clickup_list_id'], elm['clickup_task_id'])        
     
     # print('\n\nCREATED ALL TASKS FOR ALL PROJECTS \n\n')
-    # import ipdb; ipdb.set_trace()
 
     # print('\n\n HOLDING COMMNAD LINE \n\n')
 

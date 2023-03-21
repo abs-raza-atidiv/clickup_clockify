@@ -5,7 +5,8 @@ import pandas as pd
 import json 
 import utils.bigquery_utils as bq
 import utils.db as db
-from  datetime import datetime, date
+from  datetime import datetime, date, timedelta
+import time
 from envyaml import EnvYAML
 CONFIG = EnvYAML('config.yaml').get('prod')
 
@@ -103,7 +104,7 @@ def create_clockify_client(client_name, client_note):
         response = requests.post(url=api.clockify_client_api, headers=api.clockify_header, data = payload)
         if response.status_code == 201:
             print('client created - ', client_name)
-            return pd.json_normalize( response)
+            return pd.json_normalize(json.loads(response.text))
         else:
             print('failed api. Err: ', response.text)
 
@@ -127,8 +128,8 @@ def create_clockify_projects(project_name, project_note, client_id):
 
         if response.status_code == 201:
             print('project created - ', project_name)
-            # resp = response.json()
-            return response.status_code
+            resp = response.json()
+            return response.status_code, response.json()
         else:
             return 501
             print('failed api. Err: ', response.text)
@@ -166,14 +167,14 @@ def get_space_client_mapping():
     return mapping
 
 
-def get_clickup_tasks(list_id):
+def get_clickup_tasks(list_id, _unix_ts):
 
     all_tasks = []
     page = 0
 
     while True:
 
-        response = requests.get(url=api.clickup_task.format(list_id=list_id, page_no=page), headers=api.clickup_header)
+        response = requests.get(url=api.clickup_task.format(list_id=list_id, page_no=page, date_created_gt=_unix_ts), headers=api.clickup_header)
 
         if response.status_code == 200:
             resp = response.json()
@@ -190,37 +191,37 @@ def get_clickup_tasks(list_id):
     return tasks_df
 
 def fetch_all_clickup_tasks():
-
+    
     master_tasks_df = pd.DataFrame()
-
+    
     spaces = get_clickup_spaces()
+    
+    pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    db_pull_date = bq.gcp2df("select max(pull_date) from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
+    db_pull_date = db_pull_date.values[0][0]
+
+    unix_ts = get_unix_timestamp(db_pull_date, 1)
 
     for spc in spaces:
-
+    
         space_list = get_clickup_lists(spc['id'])
 
         for lst in space_list:
 
-            tasks_df = get_clickup_tasks(lst['id'])
-            # print(tasks_df)
+            tasks_df = get_clickup_tasks(lst['id'], unix_ts)
+            
             master_tasks_df =  pd.concat([master_tasks_df, tasks_df])
 
-            print('Appended {} row to master_df. New master len {}'.format(len(tasks_df), len(master_tasks_df)))
+            print('{} Appended {} row to master_df. New master len {}'.format(datetime.now(), len(tasks_df), len(master_tasks_df)))
 
-        print('ended list {}\n\n'.format(spc['name']))
+        print('{} ended list {}\n\n'.format(datetime.now(), spc['name']))
 
     print('parsed all spaces\n\n')
 
-    print(master_tasks_df)  
-
-    print(master_tasks_df.columns)
-    
     standardize_column(master_tasks_df)
 
-    master_tasks_df['pull_date'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    print(master_tasks_df.columns)
-    print(master_tasks_df.head())
+    master_tasks_df['pull_date'] = pull_date
 
     return master_tasks_df
 
@@ -257,7 +258,6 @@ def get_clockify_clients_bq():
 
 def create_clockify_task(proj_id, task_name, clickup_list_id, clickup_task_jd):
     try:
-        # import ipdb; ipdb.set_trace()
         # proj_id = '63e23e4c192143097fc8d3ea'
         url = api.clockify_task_api.format(project_id=proj_id)
         
@@ -276,7 +276,7 @@ def create_clockify_task(proj_id, task_name, clickup_list_id, clickup_task_jd):
             resp = response.json()
             resp['clickup_list_id'] = clickup_list_id
             resp['clickup_task_id'] = clickup_task_jd
-            resp['pull_date'] = current_date_time()
+            # resp['pull_date'] = current_date_time()
 
             return resp
         else:
@@ -323,6 +323,17 @@ def get_clockify_tasks(project_id):
 
         return resp
 
+def get_unix_timestamp(_db_date, timedelay=0):
+    '''
+    Calculates unix timestamp of pull_date passed on. with delay (minutes) if provided
+    Returns: unix timestamp
+    '''
+
+    last_cycle = datetime.strptime(_db_date, "%Y-%m-%d %H:%M:%S") - timedelta(minutes=timedelay)
+
+    unix_time = int(time.mktime(last_cycle.timetuple()) * 1000)
+
+    return unix_time
 
 def DELETE_ALL_CLOCKIFY_TASK():
     
@@ -381,7 +392,7 @@ def update_task_name(project_id, task_id, clickup_parent_id, clickup_child_id, c
         print(str(e))
 
 def current_date_time():
-    ''' Format : '2023-02-23 19:23:44' '''
+    ''' String Format : '2023-02-23 19:23:44' '''
     try:
         return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     except Exception as e:
@@ -455,4 +466,49 @@ def dump_new_clickup_list_to_bq(all_lists):
 
     except Exception as e:
         log_error(str(e), 'log__'+str(date.today()))
+        print(str(e))
+
+
+
+def dump_new_clockify_project_to_bq(_responses):
+    '''Append new projects entries in clockify_projects table'''
+    try:
+        if len(_responses)>0:
+            all_lists_df = pd.json_normalize(_responses)
+
+            if len(all_lists_df.columns)>0:
+
+                project_df = standardize_column(all_lists_df)
+                project_df.drop(axis = 1, columns=['memberships'], inplace=True)
+                project_df['pull_date'] = current_date_time()
+
+                bq.df2gcp(project_df, db.CLOCKIFY_PROJECT, mode='append')
+            else:
+                log_error('NO COLUMNS FOUND IN NEW LIST', 'log__'+str(date.today()))
+
+    except Exception as e:
+        # log_error(str(e), 'log__'+str(date.today()))
+        print(str(e))
+
+
+
+def dump_new_clickup_space_to_bq(_responses_df, drop_col=[]):
+    '''Append new space entries in clickup_space table'''
+    try:
+        if len(_responses_df.columns)>0:
+
+            space_df = standardize_column(_responses_df)
+            # project_df.drop(axis = 1, columns=[], inplace=True)
+            db_columns = ['id','name','color','private','admin_can_manage','multiple_assignees',
+                          'archived','pull_date']
+            space_df = space_df[db_columns]
+
+            space_df['pull_date'] = current_date_time()
+
+            bq.df2gcp(space_df, db.CLICKUP_SPACE, mode='replace')
+        else:
+            log_error('NO COLUMNS FOUND IN NEW LIST', 'log__'+str(date.today()))
+
+    except Exception as e:
+        # log_error(str(e), 'log__'+str(date.today()))
         print(str(e))

@@ -1,4 +1,5 @@
 
+CLICKUP_SPACE = 'clickup_space'
 CLICKUP_TASK = 'clickup_task'
 CLICKUP_LIST = 'clickup_list'
 
