@@ -10,11 +10,41 @@ bq_dataset = 'tickets_dataset'
 client = bigquery.Client(project=gcp_project)
 # dataset_ref = client.dataset(bq_dataset)
 
+## --------------------------------------------------------------------------------------------------
+## GET LIST FROM BIGQUERY
+## --------------------------------------------------------------------------------------------------
+def get_table_data(table_name):
+    df = pd.DataFrame()
+    try:
+        sql = "select * from {}.{}.{} ".format(
+            gcp_project, 
+            bq_dataset,
+            table_name
+        )
+
+        df = gcp2df(sql) 
+
+        return df
+        # value_list = df.values.tolist()
+
+    except Exception as E:
+        print(str(E))
+
+
+
+## --------------------------------------------------------------------------------------------------
+## GET LIST FROM BIGQUERY
+## --------------------------------------------------------------------------------------------------
 def gcp2df(sql):
     query = client.query(sql)
     results = query.result()
     return results.to_dataframe()
 
+
+
+## --------------------------------------------------------------------------------------------------
+## GET LIST FROM BIGQUERY
+## --------------------------------------------------------------------------------------------------
 def df2gcp(dataframe, table_name, mode='append'):
     # table_name = 'clickup_task'
     table_id = gcp_project+'.'+bq_dataset+'.'+table_name

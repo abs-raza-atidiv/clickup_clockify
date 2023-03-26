@@ -7,227 +7,15 @@ import utils.bigquery_utils as bq
 import utils.db as db
 from  datetime import datetime, date, timedelta
 import time
+import numpy as np
+
 from envyaml import EnvYAML
 CONFIG = EnvYAML('config.yaml').get('prod')
 
-# GET CLICKUP SPACES
-# ---------------------------------------------------------------
-def get_clickup_spaces():
-    try:
-        spaces = {}
-        url = api.clickup_spaces
 
-        response = requests.get(url, headers=api.clickup_header)
-
-        if response.status_code == 200:
-            resp = response.json()
-            spaces = resp.get('spaces')
-
-            return spaces
-        
-
-    except Exception as e:
-        print(str(e))
-
-
-# # GET CLICKUP FOLDERS
-# # ---------------------------------------------------------------
-# def get_clickup_folders(space_id):
-#     try:
-#         folders = {}
-#         url = api.clickup_folders.format(space_id=space_id)
-
-#         response = requests.get(url, headers=api.clickup_header)
-
-#         if response.status_code == 200:
-#             resp = response.json()
-#             folders = resp.get('folders')
-#             print(folders)
-#             return folders
-        
-#     except Exception as e:
-#         print(str(e))
-
-
-
-
-# GET CLICKUP LISTS
-# ---------------------------------------------------------------
-def get_clickup_lists(space_id):
-    try:
-        lists = []
-        url = api.clickup_folderless_list.format(space_id=space_id)
-
-        response = requests.get(url, headers=api.clickup_header)
-
-        if response.status_code == 200:
-            resp = response.json()
-            lists = resp.get('lists')
-            return lists
-        else:
-            return lists
-
-    except Exception as e:
-        print(str(e))
-
-
-# GET CLOCKIFY CLIENTS
-# ---------------------------------------------------------------
-def get_clockify_clients():
-    try:
-        
-        response = requests.get(url=api.clockify_client_api, headers=api.clockify_header)
-
-        if response.status_code == 200:
-            resp = response.json()
-            return resp
-
-    except Exception as e:
-        print(str(e))
-
-
-# CREATE CLOCKIFY CLIENTS
-# ---------------------------------------------------------------
-def create_clockify_client(client_name, client_note):
-    ''' 
-        returns if response.status_code == 201:
-        print('client created - ', client_name)
-        return pd.json_normalize( response)
-    '''
-    try:
-        
-        payload = json.dumps({
-            "name": client_name,
-            "note": client_note
-        })
-
-        response = requests.post(url=api.clockify_client_api, headers=api.clockify_header, data = payload)
-        if response.status_code == 201:
-            print('client created - ', client_name)
-            return pd.json_normalize(json.loads(response.text))
-        else:
-            print('failed api. Err: ', response.text)
-
-    except Exception as e:
-        
-        print(str(e))
-
-
-# CREATE CLOCKIFY projects
-# ---------------------------------------------------------------
-def create_clockify_projects(project_name, project_note, client_id):
-    try:
-        
-        payload = json.dumps({
-            "name": project_name,
-            "note": project_note,
-            "clientId": client_id ## client_id of an existing client on Clockify
-        })
-
-        response = requests.post(url=api.clockify_project_api, headers=api.clockify_header, data = payload)
-
-        if response.status_code == 201:
-            print('project created - ', project_name)
-            resp = response.json()
-            return response.status_code, response.json()
-        else:
-            return 501
-            print('failed api. Err: ', response.text)
-
-    except Exception as e:
-        
-        print("create_clockify_projects ", str(e))
-
-
-# GET CLOCKIFY projects
-# ---------------------------------------------------------------
-def get_clockify_projects():
-    try:
-        
-        response = requests.get(url=api.clockify_project_api, headers=api.clockify_header)
-        
-        if response.status_code == 200:
-            projects = response.json()
-            return projects
-
-    except Exception as e:
-        
-        print("create_clockify_projects ", str(e))
-
-
-
-def get_space_client_mapping():
-
-    client = get_clockify_clients()
-    mapping = {}
-
-    for elm in client:
-        mapping[elm['note']] = elm['id']
-
-    return mapping
-
-
-def get_clickup_tasks(list_id, _unix_ts):
-
-    all_tasks = []
-    page = 0
-
-    while True:
-
-        response = requests.get(url=api.clickup_task.format(list_id=list_id, page_no=page, date_created_gt=_unix_ts), headers=api.clickup_header)
-
-        if response.status_code == 200:
-            resp = response.json()
-            tasks = resp['tasks']
-
-            if len(tasks) > 0:
-                all_tasks.extend(tasks)
-                page += 1
-            else: 
-                break
-
-    tasks_df = pd.json_normalize(all_tasks)
-
-    return tasks_df
-
-def fetch_all_clickup_tasks():
-    
-    master_tasks_df = pd.DataFrame()
-    
-    spaces = get_clickup_spaces()
-    
-    pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    db_pull_date = bq.gcp2df("select max(pull_date) from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
-    db_pull_date = db_pull_date.values[0][0]
-    if not db_pull_date:
-        db_pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S') - timedelta(days=1)
-    
-    unix_ts = get_unix_timestamp(db_pull_date, 1)
-
-    for spc in spaces:
-    
-        space_list = get_clickup_lists(spc['id'])
-
-        for lst in space_list:
-
-            tasks_df = get_clickup_tasks(lst['id'], unix_ts)
-            
-            master_tasks_df =  pd.concat([master_tasks_df, tasks_df])
-
-            print('{} Appended {} row to master_df. New master len {}'.format(datetime.now(), len(tasks_df), len(master_tasks_df)))
-
-        print('{} ended list {}\n\n'.format(datetime.now(), spc['name']))
-
-    print('parsed all spaces\n\n')
-
-    standardize_column(master_tasks_df)
-
-    master_tasks_df['pull_date'] = pull_date
-
-    return master_tasks_df
-
-
+## --------------------------------------------------------------------------------------------------
+## GET LIST SPACES THAT NEEDS NOT TO BE MOVED TO CLOCKIFY
+## --------------------------------------------------------------------------------------------------
 def standardize_column(df):
 
     columns = df.columns
@@ -239,13 +27,16 @@ def standardize_column(df):
     return df
     
 
-def get_clockify_clients_bq():
+## --------------------------------------------------------------------------------------------------
+## GET LIST FROM BIGQUERY
+## --------------------------------------------------------------------------------------------------
+def clockify_existing_users():
     df = pd.DataFrame()
     try:
-        sql = "select *   from {}.{}.{}".format(
+        sql = "select id from {}.{}.{}".format(
             bq.gcp_project, 
             bq.bq_dataset,
-            db.CLOCKIFY_CLIENT
+            db.CLOCKIFY_USER
         )
 
         df = bq.gcp2df(sql) 
@@ -257,40 +48,9 @@ def get_clockify_clients_bq():
         print(str(E))
     
 
-
-def create_clockify_task(proj_id, task_name, clickup_list_id, clickup_task_jd):
-    try:
-        # proj_id = '63e23e4c192143097fc8d3ea'
-        url = api.clockify_task_api.format(project_id=proj_id)
-        
-        payload = json.dumps({
-            "name": task_name
-        })
-
-        # payload = json.dumps({
-        #     "name": task_name+str(datetime.now())
-        # })
-
-        response = requests.post(url, headers=api.clockify_header, data=payload)
-
-        if response.status_code == 201:
-            # log_error(clickup_task_jd+' - '+str(resp), 'feb_22_tasks_created')
-            resp = response.json()
-            resp['clickup_list_id'] = clickup_list_id
-            resp['clickup_task_id'] = clickup_task_jd
-            # resp['pull_date'] = current_date_time()
-
-            return resp
-        else:
-            log_error(clickup_task_jd+' - '+task_name, 'feb_22_task_not_created')
-            resp = response.json()
-            return {}
-            
-    except Exception as e:
-        log_error(clickup_task_jd + " <<clickup_task_jd. Err Message " + str(e), "tasks_not_created_on_clockify_run2")
-        # print(str(e))
-
-
+## --------------------------------------------------------------------------------------------------
+## LOGGING FUNCTIONS
+## --------------------------------------------------------------------------------------------------
 def log_error(txt, file_name):
     with open(file_name+'.txt', 'a') as f:
         f.write('\n'+txt)
@@ -314,84 +74,6 @@ def write_json_log(err, file_name):
         # write_json_log({"name": "clickup task 2", "pull_date": "2023-01-24 00:00:00"}, 'df_csv.json')
 
 
-def get_clockify_tasks(project_id):
-    ''' returns List of Dictionary '''
-    url = api.clockify_task_api.format(project_id=project_id)+'?page-size=5000&is-active=true'
-
-    response = requests.get(url, headers=api.clockify_header)
-
-    if response.status_code == 200:
-        resp = json.loads(response.text)
-
-        return resp
-
-def get_unix_timestamp(_db_date, timedelay=0):
-    '''
-    Calculates unix timestamp of pull_date passed on. with delay (minutes) if provided
-    Returns: unix timestamp
-    '''
-
-    last_cycle = datetime.strptime(_db_date, "%Y-%m-%d %H:%M:%S") - timedelta(minutes=timedelay)
-
-    unix_time = int(time.mktime(last_cycle.timetuple()) * 1000)
-
-    return unix_time
-
-def DELETE_ALL_CLOCKIFY_TASK():
-    
-
-    project = get_clockify_projects()
-
-    for prj in project:
-        try:
-            project_id = prj['id']
-            
-            if project_id == '63e23e4c192143097fc8d3ea': continue
-
-            tasks = get_clockify_tasks(project_id=project_id)
-
-            log_error('\n\nDELETING {} TASKS FOR PROJECT {}'.format(len(tasks), project_id), 'delete_task')
-            
-            for elm in tasks:
-                try:
-                    task_id = elm['id']
-
-                    delete_clockify_task(project_id=project_id, task_id=task_id)
-                except Exception as e:
-                    print(str(e))
-                    log_error('\nerror thrown for PROJECT {} -- TASK {}. {}'.format(project_id, task_id, str(e)), 'delete_task')
-
-            log_error('\n\n PROJECT CLEANED {}\n\n'.format(prj['name']), 'delete_task')
-        except Exception as e:
-            print(str(e))
-            
-def delete_clockify_task(project_id, task_id):
-    ''' returns void
-    logs SUCCESS ID / DELETE FAILED
-    '''
-    url = api.delete_clociky_task.format(projectId=project_id, taskId=task_id)
-
-    response = requests.delete(url=url, headers=api.clockify_header)
-
-    if response.status_code == 200:
-        log_error('SUCCESS. ID {}__{}'.format(project_id, task_id), 'delete_task')
-    else:    
-        log_error('\nDELETE FAILED. ID {}__{}'.format(project_id, task_id), 'delete_task')
-
-
-def update_task_name(project_id, task_id, clickup_parent_id, clickup_child_id, child_name, parent_name):
-    try:
-        url = api.delete_clociky_task.format(projectId=project_id, taskId=task_id)
-
-        payload = json.dumps({
-            "name": "{}-{}-{}-{}".format(clickup_child_id, child_name, clickup_parent_id, parent_name)
-        })
-        response = requests.put(url=url, headers=api.clockify_header , data=payload)
-
-        if response.status_code == 200:
-            log_error('updated {}.'.format(task_id), 'updated_clockify_tasks')
-    except Exception as e:
-        print(str(e))
 
 def current_date_time():
     ''' String Format : '2023-02-23 19:23:44' '''
@@ -401,79 +83,31 @@ def current_date_time():
         print(str(e))
 
 
-
-def get_all_clockify_tasks():
-    
-    project = get_clockify_projects()
-    
-    master_df = pd.DataFrame()
-
-    for prj in project:
-        try:
-            print('project '+prj['id']+prj['name'])
-            project_id = prj['id']
-            
-            if project_id == '63e23e4c192143097fc8d3ea': continue
-
-            tasks = get_clockify_tasks(project_id=project_id)
-
-            task_df = pd.DataFrame(tasks)
-
-            task_df['clickup_task_id'] = 'undefined'
-            task_df['clickup_list_id'] = 'undefined'
-            task_df['pull_date'] = current_date_time()
-
-            # for idx, elm in task_df.iterrows():
-            #     if elm['name'][7] == ':':
-            #         task_df['clickup_task_id'][idx] = elm['name'].split(':')[0]
-            #     if elm['name'][7] == '-':
-            #         task_df['clickup_task_id'][idx] = elm['name'].split('-')[0]
-            print('{} tasks added '.format(len(task_df)))
-            master_df = pd.concat([master_df, task_df])
-            # bq.df2gcp(task_df, 'clockify_tasks_2', mode='replace')
-
-        except Exception as e:
-            print(str(e))
-
-    return master_df
-
-
 ## --------------------------------------------------------------------------------------------------
 ## GET LIST SPACES THAT NEEDS NOT TO BE MOVED TO CLOCKIFY
 ## --------------------------------------------------------------------------------------------------
-def get_clickup_rejected_spaces():
+def prep_and_dump_new_data_in_bq(_df, _table_name, _mode='append'):
     try:
-        rejected_list = CONFIG.get('rejected_clickup_space_ids')
-        rejected_list_str = [str(x) for x in rejected_list]
-        return rejected_list_str        
-        
-    except Exception as e:
-        print(str(e))
+        if len(_df)>0 and len(_df.columns)>0:
 
+            new_df = standardize_column(_df)
 
-def dump_new_clickup_list_to_bq(all_lists):
-    try:
-        if len(all_lists)>0:
-            all_lists_df = pd.json_normalize(all_lists)
+            new_df['pull_date'] = current_date_time()
 
-            if len(all_lists_df.columns)>0:
-
-                new_df = standardize_column(all_lists_df)
-
-                new_df['pull_date'] = current_date_time()
-
-                bq.df2gcp(new_df, db.CLICKUP_LIST, mode='append')
-            else:
-                log_error('NO COLUMNS FOUND IN NEW LIST', 'log__'+str(date.today()))
+            bq.df2gcp(new_df, _table_name, mode=_mode)
+        else:
+            log_error('No new users to dump in database', 'log__'+str(date.today()))
 
     except Exception as e:
         log_error(str(e), 'log__'+str(date.today()))
         print(str(e))
 
 
-
-def dump_new_clockify_project_to_bq(_responses):
-    '''Append new projects entries in clockify_projects table'''
+## --------------------------------------------------------------------------------------------------
+## GET LIST SPACES THAT NEEDS NOT TO BE MOVED TO CLOCKIFY
+## --------------------------------------------------------------------------------------------------
+def dump_new_timesheets_on_clockify(_responses):
+    ''' Input Arguement _response: List '''
     try:
         if len(_responses)>0:
             all_lists_df = pd.json_normalize(_responses)
@@ -484,7 +118,7 @@ def dump_new_clockify_project_to_bq(_responses):
                 project_df.drop(axis = 1, columns=['memberships'], inplace=True)
                 project_df['pull_date'] = current_date_time()
 
-                bq.df2gcp(project_df, db.CLOCKIFY_PROJECT, mode='append')
+                bq.df2gcp(project_df, db.CLOCKIFY_TIMESHEET, mode='append')
             else:
                 log_error('NO COLUMNS FOUND IN NEW LIST', 'log__'+str(date.today()))
 
@@ -493,24 +127,125 @@ def dump_new_clockify_project_to_bq(_responses):
         print(str(e))
 
 
-
-def dump_new_clickup_space_to_bq(_responses_df, drop_col=[]):
-    '''Append new space entries in clickup_space table'''
+## --------------------------------------------------------------------------------------------------
+## GET UPDATED OBJECT VALUES
+## --------------------------------------------------------------------------------------------------
+def create_snapshot(new_df, old_df):
     try:
-        if len(_responses_df.columns)>0:
+        ## Remove extra columns which we do not want to compare
+        # new_df.drop(axis = 1, columns = ['cursor'], inplace=True)
+        
+        # old_df = db_df.drop(axis = 1, columns = ['pull_date','cursor'])
+        # old_df = db_df
 
-            space_df = standardize_column(_responses_df)
-            # project_df.drop(axis = 1, columns=[], inplace=True)
-            db_columns = ['id','name','color','private','admin_can_manage','multiple_assignees',
-                          'archived','pull_date']
-            space_df = space_df[db_columns]
+        ## Dropping any column of list, dict, object type to avoid messing merging
+        drop_cols = []
+        for col in new_df.columns: 
+            if not (isinstance(new_df[col][0], str) or 
+                    isinstance(new_df[col][0], int) or 
+                    isinstance(new_df[col][0], float) or 
+                    isinstance(new_df[col][0], bool) or 
+                    isinstance(new_df[col][0], np.bool_)): 
+                drop_cols.append(col)
 
-            space_df['pull_date'] = current_date_time()
+        # import ipdb; ipdb.set_trace()
+        print(drop_cols)
+        new_df.drop(axis=1, columns=drop_cols,inplace=True)
 
-            bq.df2gcp(space_df, db.CLICKUP_SPACE, mode='replace')
-        else:
-            log_error('NO COLUMNS FOUND IN NEW LIST', 'log__'+str(date.today()))
+        ## Get columns of df
+        old_cols = old_df.columns
+        new_cols = new_df.columns
 
-    except Exception as e:
-        # log_error(str(e), 'log__'+str(date.today()))
+        ## Get new df common matching columns with old df
+        common_cols = list(np.intersect1d(new_cols, old_cols))
+
+        ## Trim both dataframes with common columns
+        new_df = new_df[common_cols]
+        old_df = old_df[common_cols]
+
+        ## JOIN 
+        diff_df = new_df.merge(old_df, on=common_cols, how='left', indicator=True)
+
+        ## ANTI-JOIN
+        updated_and_new_data = diff_df.loc[diff_df['_merge'] == 'left_only', common_cols]
+
+        updated_and_new_data['pull_date'] = str(datetime.now())
+
+        return updated_and_new_data
+    
+    except Exception as e: 
         print(str(e))
+        return pd.DataFrame() 
+
+
+## --------------------------------------------------------------------------------------------------
+## GET UPDATED OBJECT VALUES
+## --------------------------------------------------------------------------------------------------
+def get_previous_data_from_bq(_pull_date):
+    query = "select platform_id as id, new_value as name, platform_update_date as date_updated from \
+            {}.{}.{} where platform_name='clickup' and object_type='task' \
+            and pull_date >='{}'".format(bq.gcp_project, 
+                                           bq.bq_dataset, 
+                                           db.WATERMARK,
+                                           _pull_date)
+    df = bq.gcp2df(query)
+    return df
+
+
+## --------------------------------------------------------------------------------------------------
+## GET COCKIFY USERS
+## --------------------------------------------------------------------------------------------------
+def get_clockify_users():
+    try:
+        all_users = []
+        page = 1
+        while True:
+            url = api.clockify_user_api.format(page_no=page)
+            response = requests.get(url=url, headers=api.clockify_header)
+
+            if response.status_code == 200:
+                resp = response.json()
+                if len(resp) > 0:
+                    all_users.extend(resp)
+                    page += 1
+                else: 
+                    break
+        resp_df = pd.DataFrame(all_users)
+        resp_df.drop(axis=1, columns=['settings','memberships','customFields'], inplace=True)
+
+        return resp_df
+    
+    except Exception as e: 
+        print(str(e))
+        return pd.DataFrame() 
+
+
+## --------------------------------------------------------------------------------------------------
+## GET COCKIFY TIME ENTRIES
+## --------------------------------------------------------------------------------------------------
+def get_clockify_timeentries(users_ids):
+    try:
+        all_entries = []
+        for elm in users_ids:
+            page = 1
+
+            while True:
+                url = api.clockify_timeentry_api.format(userId=elm, page_no=page)
+                response = requests.get(url=url, headers=api.clockify_header)
+
+                if response.status_code == 200:
+                    resp = response.json()
+                    if len(resp) > 0:
+                        all_entries.extend(resp)
+                        page += 1
+                    else: 
+                        break
+
+        resp_df = pd.json_normalize(all_entries)
+        # resp_df.drop(axis=1, columns=['settings','memberships','customFields'], inplace=True)
+
+        return resp_df
+    
+    except Exception as e: 
+        print(str(e))
+        return pd.DataFrame() 
