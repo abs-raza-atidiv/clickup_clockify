@@ -1,11 +1,15 @@
+from envyaml import EnvYAML
 
-CLICKUP_SPACE = 'clickup_space'
-CLICKUP_TASK = 'clickup_task'
-CLICKUP_LIST = 'clickup_list'
+devMode = EnvYAML('config.yaml').get('dev_mode')
+table_prefix = '_' if devMode else ''
 
-CLOCKIFY_CLIENT = 'clockify_client'
-CLOCKIFY_TASK = 'clockify_task'
+CLICKUP_SPACE = table_prefix + 'clickup_space'
+CLICKUP_TASK = table_prefix + 'clickup_task'
+CLICKUP_LIST = table_prefix + 'clickup_list'
 
-CLOCKIFY_PROJECT = 'clockify_project'
+CLOCKIFY_CLIENT = table_prefix + 'clockify_client'
+CLOCKIFY_TASK = table_prefix + 'clockify_task'
 
-ASANA_TASKS = 'asana_task'
+CLOCKIFY_PROJECT = table_prefix + 'clockify_project'
+
+ASANA_TASKS = table_prefix + 'asana_task'

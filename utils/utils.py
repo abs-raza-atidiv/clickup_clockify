@@ -200,7 +200,9 @@ def fetch_all_clickup_tasks():
 
     db_pull_date = bq.gcp2df("select max(pull_date) from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
     db_pull_date = db_pull_date.values[0][0]
-
+    if not db_pull_date:
+        db_pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S') - timedelta(days=1)
+    
     unix_ts = get_unix_timestamp(db_pull_date, 1)
 
     for spc in spaces:

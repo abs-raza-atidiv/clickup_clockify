@@ -1,3 +1,6 @@
+dev_mode: True
+
 prod:
   rejected_clickup_space_ids:
     - 19203391
+
