@@ -13,3 +13,5 @@ CLOCKIFY_TASK = table_prefix + 'clockify_task'
 CLOCKIFY_PROJECT = table_prefix + 'clockify_project'
 
 ASANA_TASKS = table_prefix + 'asana_task'
+
+WATERMARK = table_prefix + 'watermark'

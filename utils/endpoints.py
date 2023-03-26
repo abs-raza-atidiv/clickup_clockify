@@ -18,7 +18,7 @@ clickup_folderless_list = clickup_base_url+"/space/{space_id}/list"
 
 clickup_header = {"Authorization": env.clickup_token, "Content-Type": "application/json"}
 
-clickup_task = clickup_base_url+"/list/{list_id}/task?page={page_no}&subtasks=true&include_closed=true&date_created_gt={date_created_gt}"
+clickup_task = clickup_base_url+"/list/{list_id}/task?page={page_no}&subtasks=true&include_closed=true{addon_parameters}"
 
 #---------------------------------------------------------------------------------------
 #  CLOCKIFY
@@ -34,7 +34,7 @@ clockify_task_api = clockify_base_url+"/workspaces/"+clockify_workspace_id+"/pro
 
 clockify_header = {"X-Api-Key": env.clocify_token, "Content-Type": "application/json"}
 
-delete_clociky_task = clockify_base_url+"/workspaces/"+clockify_workspace_id+"/projects/{projectId}/tasks/{taskId}"
+clociky_single_task= clockify_base_url+"/workspaces/"+clockify_workspace_id+"/projects/{projectId}/tasks/{taskId}"
 
 # /workspaces/{workspaceId}/projects/{projectId}/tasks/{taskId}
 
