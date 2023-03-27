@@ -197,13 +197,16 @@ def fetch_all_clickup_tasks():
     spaces = get_clickup_spaces()
     
     pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    db_pull_date = bq.gcp2df("select max(pull_date) from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
+    
+    db_pull_date = bq.gcp2df("select max(pull_date) from `{}.{}.{}`".format(bq.gcp_project, 
+                                                                            bq.bq_dataset, 
+                                                                            db.CLICKUP_TASK))
     db_pull_date = db_pull_date.values[0][0]
+
     if not db_pull_date:
         db_pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S') - timedelta(days=1)
     
-    unix_ts = get_unix_timestamp(db_pull_date, 1)
+    unix_ts = get_unix_timestamp(db_pull_date, timedelay=2)
 
     for spc in spaces:
     
@@ -215,11 +218,13 @@ def fetch_all_clickup_tasks():
             
             master_tasks_df =  pd.concat([master_tasks_df, tasks_df])
 
-            print('{} Appended {} row to master_df. New master len {}'.format(datetime.now(), len(tasks_df), len(master_tasks_df)))
+            print('{} Appended {} row to master_df. New master len {}'.format(datetime.now(), 
+                                                                              len(tasks_df), 
+                                                                              len(master_tasks_df)))
 
         print('{} ended list {}\n\n'.format(datetime.now(), spc['name']))
 
-    print('parsed all spaces\n\n')
+    print('parsed all spaces. Got {} task post pull date\n\n'.format(len(master_tasks_df)))
 
     standardize_column(master_tasks_df)
 

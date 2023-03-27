@@ -1,6 +1,9 @@
-dev_mode: True
+dev_mode: False
 
 prod:
   rejected_clickup_space_ids:
     - 19203391
 
+dev:
+  CLOCKIFY_TOKEN: N2YyNGFhN2EtNzE4ZS00ZDQyLTg0YjEtNTllZDViNzFkY2Ey
+  CLOCKIFY_ATIDIV_WORKSPACE_ID: 64183c0e2b3f445fb93bba2e

@@ -52,6 +52,7 @@ def clickup_spaces():
     if len(new_client_to_write_to_db) > 0:
         df2gcp(new_client_to_write_to_db, db.CLOCKIFY_CLIENT, mode='append')
 
+    print('{} new spaces dumpedd. Passing forward {} space in total'.format(len(new_client_to_write_to_db), len(all_spaces)))
     return all_spaces
 
 
@@ -75,7 +76,7 @@ def clickup_list(all_spaces):
 
         for elm in clickup_list:
             try:
-                if elm['id'] not in list_ids_in_projects:
+                if elm['id'] not in list_ids_in_projects: ## If this condition is true, project exists 
                     list_name = elm.get('name')
                     list_id = elm.get('id')
                     list_space_id = space_client_mapping[spc['id']]
@@ -91,18 +92,16 @@ def clickup_list(all_spaces):
 
                     # temp_df = pd.DataFrame([resp])
                     # new_projects_to_write_to_db = pd.concat([new_projects_to_write_to_db, temp_df])
-                else:
-                    print('Existing Project ', elm.get('name'), ' for Client ', spc['name'])
 
             except Exception as e:
                 print(str(e))
         
-        if len(clickup_list) == 0:
-            print('NO LIST FETCHED FOR PROJECT {}-{}'.format(spc['id'], spc['name']))
+        # if len(clickup_list) == 0: print('NO LIST FETCHED FOR PROJECT {}-{}'.format(spc['id'], spc['name']))
     
     ## Prepare Clickup List Dump
     dump_new_clickup_list_to_bq(all_lists)
-
+    
+    print('New projects to dump {}'.format(len(success_response_list)))
     dump_new_clockify_project_to_bq(success_response_list)
 
     return clockify_projects
@@ -127,8 +126,9 @@ def clickup_tasks(_all_clockify_projects):
     # max_datetime = str(date_df.values[0][0])
     # ## ------------------------------------------------------------------------------
 
-    clickup_df = gcp2df("select id , name, list_id , list_name \
-         from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
+    # clickup_df = gcp2df("select id , name, list_id , list_name \
+    #      from `{}.{}.{}`".format(bq.gcp_project, bq.bq_dataset, db.CLICKUP_TASK))
+    clickup_df = clickup_task_df[['id' , 'name', 'list_id' , 'list_name']]
     # clickup_df = clickup_task_df ## both are same are we need the latest data from clickup
 
     # # ## ------------------------------------------------------------------------------
