@@ -121,7 +121,7 @@ def current_date_time():
 ## --------------------------------------------------------------------------------------------------
 def update_task_name(_clockify_project_id, _clockify_task_id, _clickup_child_id, _clickup_child_name, _clickup_parent_id='', _clickup_parent_name=''):
     try:
-        import ipdb; ipdb.set_trace()
+        # import ipdb; ipdb.set_trace()
         url = api.clociky_single_task.format(projectId=_clockify_project_id, taskId=_clockify_task_id)
 
         if _clickup_parent_id:
@@ -283,7 +283,7 @@ def fetch_updated_tasks_from_clickup():
     if not db_pull_date:
         db_pull_date = datetime.strftime(datetime.now() - timedelta(days=1), '%Y-%m-%d %H:%M:%S')
 
-    unix_ts, datetime_ts = get_unix_timestamp(db_pull_date, 20)
+    unix_ts, datetime_ts = get_unix_timestamp(db_pull_date, 1)
     # for spc in spaces:
 
     list_ids = get_clickup_list_ids_bq()['id'].values.tolist()
@@ -309,16 +309,18 @@ def fetch_updated_tasks_from_clickup():
 
     # import ipdb; ipdb.set_trace()
 
-    print('parsed all spaces\n\n')
+    print('parsed all spaces')
 
-    a3 = standardize_column(master_tasks_df)
+    if len(master_tasks_df):
+        a3 = standardize_column(master_tasks_df)
 
-    # master_tasks_df['pull_date'] = pull_date
+        # master_tasks_df['pull_date'] = pull_date
 
-    to_update_records = create_snapshot(a3, datetime_ts)
+        to_update_records = create_snapshot(a3, datetime_ts)
 
-    return to_update_records
-
+        return to_update_records
+    else:
+        return pd.DataFrame()
 
 ## --------------------------------------------------------------------------------------------------
 ## GET UPDATED OBJECT VALUES
