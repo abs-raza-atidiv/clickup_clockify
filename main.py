@@ -107,11 +107,10 @@ def clickup_list(all_spaces):
     return clockify_projects
 
 
-def clickup_tasks(_all_clockify_projects):
+def clickup_tasks(_all_clockify_projects, clickup_task_df):
 
     ''' GETTING ALL CLIKCUP TASKS IN DATAFRAME and UPLOAD TO BIGQUERY '''
     # ----------------------------------------------------------------------------------- '''
-    clickup_task_df = fetch_all_clickup_tasks()
 
     clickup_task_df = clickup_task_df[ clickup_task_df.id != '12ck3ph']
 
@@ -200,8 +199,12 @@ def main():
   
     projects = clickup_list(clients)
     
-    clickup_tasks(projects)
-
+    clickup_task_df = fetch_all_clickup_tasks()
+    
+    ## Create tasks 
+    if len(clickup_task_df):
+        clickup_tasks(projects, clickup_task_df)
+    
     ''' UPDATE CHILD TASKS '''
     
     # child_df = gcp2df(" select tbl1.id as child_id, tbl1.parent as parent_id, tbl1.name as child_name, tbl2.name as parent_name \
