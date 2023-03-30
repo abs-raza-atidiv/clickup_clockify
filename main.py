@@ -176,7 +176,7 @@ def clickup_tasks(_all_clockify_projects):
 
                 if clk_project_id and elm['id'] not in clockify_bq_task_list:
                     # print('new tak ' + elm['name'])
-                    resps = create_clockify_task(clk_project_id, elm['id']+': '+elm['name'], elm['list_id'], elm['id'])        
+                    resps = create_clockify_task(clk_project_id, elm['id']+' || '+elm['name'], elm['list_id'], elm['id'])        
                     if resps:
                         new_task_created.append(resps)
                     else:
