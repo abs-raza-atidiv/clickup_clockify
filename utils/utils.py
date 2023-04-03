@@ -206,7 +206,7 @@ def fetch_all_clickup_tasks():
     if not db_pull_date:
         db_pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S') - timedelta(days=1)
     
-    unix_ts = get_unix_timestamp(db_pull_date, timedelay=2)
+    unix_ts = get_unix_timestamp(db_pull_date, timedelay=5000)
 
     for spc in spaces:
     

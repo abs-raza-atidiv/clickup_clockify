@@ -116,7 +116,7 @@ def clickup_tasks(_all_clockify_projects, clickup_task_df):
 
     clickup_task_df.drop(axis = 1, columns = ['custom_fields'], inplace = True)
     
-    df2gcp(clickup_task_df, db.CLICKUP_TASK, mode = 'append')
+    # df2gcp(clickup_task_df, db.CLICKUP_TASK, mode = 'append')
 
 
     ''' CREATE TASKS ON CLOCKIFY FROM BIGQUERY '''
@@ -162,6 +162,11 @@ def clickup_tasks(_all_clockify_projects, clickup_task_df):
 
     print('{} tasks to be created '.format(len(clickup_trimmed_df)))
     
+    df2gcp(clickup_trimmed_df, db.CLICKUP_TASK, mode = 'append')
+
+    # -----------------------------------------------------------------------------------
+    # CREATE NEW TASK ON CLOCKIFY
+
     new_task_created = []
 
     for idx, elm in clickup_trimmed_df.iterrows():
