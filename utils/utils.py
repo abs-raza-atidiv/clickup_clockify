@@ -190,12 +190,15 @@ def get_clickup_tasks(list_id, _unix_ts):
 
     return tasks_df
 
+# 
+# ---------------------------------------------------------------
 def fetch_all_clickup_tasks():
     
     master_tasks_df = pd.DataFrame()
     
     spaces = get_clickup_spaces()
-    
+    rejected_spaces = get_clickup_rejected_spaces()
+
     pull_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
     db_pull_date = bq.gcp2df("select max(pull_date) from `{}.{}.{}`".format(bq.gcp_project, 
@@ -210,8 +213,7 @@ def fetch_all_clickup_tasks():
 
     for spc in spaces:
     
-        space_list = get_clickup_lists(spc['id'])
-
+        space_list = get_clickup_lists(spc['id']) if spc['id'] not in rejected_spaces else list()
         for lst in space_list:
 
             tasks_df = get_clickup_tasks(lst['id'], unix_ts)
