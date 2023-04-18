@@ -155,7 +155,8 @@ def get_clockify_projects():
         print("create_clockify_projects ", str(e))
 
 
-
+# 
+# ---------------------------------------------------------------
 def get_space_client_mapping():
 
     client = get_clockify_clients()
@@ -166,7 +167,8 @@ def get_space_client_mapping():
 
     return mapping
 
-
+# 
+# ---------------------------------------------------------------
 def get_clickup_tasks(list_id, _unix_ts):
 
     all_tasks = []
@@ -235,6 +237,8 @@ def fetch_all_clickup_tasks():
     return master_tasks_df
 
 
+# 
+# ---------------------------------------------------------------
 def standardize_column(df):
 
     columns = df.columns
@@ -246,6 +250,8 @@ def standardize_column(df):
     return df
     
 
+# 
+# ---------------------------------------------------------------
 def get_clockify_clients_bq():
     df = pd.DataFrame()
     try:
@@ -265,6 +271,8 @@ def get_clockify_clients_bq():
     
 
 
+# 
+# ---------------------------------------------------------------
 def create_clockify_task(proj_id, task_name, clickup_list_id, clickup_task_jd):
     try:
         # proj_id = '63e23e4c192143097fc8d3ea'
@@ -298,6 +306,8 @@ def create_clockify_task(proj_id, task_name, clickup_list_id, clickup_task_jd):
         # print(str(e))
 
 
+# 
+# ---------------------------------------------------------------
 def log_error(txt, file_name):
     with open(file_name+'.txt', 'a') as f:
         f.write('\n'+txt)
@@ -321,6 +331,8 @@ def write_json_log(err, file_name):
         # write_json_log({"name": "clickup task 2", "pull_date": "2023-01-24 00:00:00"}, 'df_csv.json')
 
 
+# 
+# ---------------------------------------------------------------
 def get_clockify_tasks(project_id):
     ''' returns List of Dictionary '''
     url = api.clockify_task_api.format(project_id=project_id)+'?page-size=5000&is-active=true'
@@ -332,6 +344,8 @@ def get_clockify_tasks(project_id):
 
         return resp
 
+# 
+# ---------------------------------------------------------------
 def get_unix_timestamp(_db_date, timedelay=0):
     '''
     Calculates unix timestamp of pull_date passed on. with delay (minutes) if provided
@@ -344,6 +358,8 @@ def get_unix_timestamp(_db_date, timedelay=0):
 
     return unix_time
 
+# 
+# ---------------------------------------------------------------
 def DELETE_ALL_CLOCKIFY_TASK():
     
 
@@ -372,6 +388,8 @@ def DELETE_ALL_CLOCKIFY_TASK():
         except Exception as e:
             print(str(e))
             
+# 
+# ---------------------------------------------------------------
 def delete_clockify_task(project_id, task_id):
     ''' returns void
     logs SUCCESS ID / DELETE FAILED
@@ -386,6 +404,8 @@ def delete_clockify_task(project_id, task_id):
         log_error('\nDELETE FAILED. ID {}__{}'.format(project_id, task_id), 'delete_task')
 
 
+# 
+# ---------------------------------------------------------------
 def update_task_name(project_id, task_id, clickup_parent_id, clickup_child_id, child_name, parent_name):
     try:
         url = api.delete_clociky_task.format(projectId=project_id, taskId=task_id)
@@ -408,7 +428,8 @@ def current_date_time():
         print(str(e))
 
 
-
+# 
+# ---------------------------------------------------------------
 def get_all_clockify_tasks():
     
     project = get_clockify_projects()
@@ -458,6 +479,8 @@ def get_clickup_rejected_spaces():
         print(str(e))
 
 
+# 
+# ---------------------------------------------------------------
 def dump_new_clickup_list_to_bq(all_lists):
     try:
         if len(all_lists)>0:
@@ -478,7 +501,8 @@ def dump_new_clickup_list_to_bq(all_lists):
         print(str(e))
 
 
-
+# 
+# ---------------------------------------------------------------
 def dump_new_clockify_project_to_bq(_responses):
     '''Append new projects entries in clockify_projects table'''
     try:
@@ -500,7 +524,8 @@ def dump_new_clockify_project_to_bq(_responses):
         print(str(e))
 
 
-
+# 
+# ---------------------------------------------------------------
 def dump_new_clickup_space_to_bq(_responses_df, drop_col=[]):
     '''Append new space entries in clickup_space table'''
     try:
