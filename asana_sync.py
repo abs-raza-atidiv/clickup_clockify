@@ -106,7 +106,7 @@ def asana_data_pull():
                     clk_project_name = project_df[ project_df.platform_project_id == elm['project_id']]['clockify_project_name'].values[0]
 
                     if clk_project_id and elm['gid'] not in clockify_bq_task_list:
-                        to_name = elm['gid']+': '+elm['name']
+                        to_name = elm['gid']+' || '+elm['name']
                         resps = create_clockify_task(clk_project_id, to_name, elm['project_id'], elm['gid'])        
                         if resps:
                             print('Task created '+elm['gid'])
